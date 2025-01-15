@@ -114,6 +114,15 @@
               <i class="fas fa-fw fa-list"></i>
               <span>Payment data</span></a>
           </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="news.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>News data</span></a>
+          </li>
            
       
       <?php } ?>
