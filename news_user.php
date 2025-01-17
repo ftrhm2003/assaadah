@@ -1,22 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
+
+<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My school</title>
+
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="news_user.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Custom fonts for this template-->
+  <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  
+
 </head>
 <body>
     <section id="topbar" class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-primary text-white topbar-transparent">
         <div class="container">
           <div class="row">
             <div class="col-lg-6   text-start">
-             <span class="px-3"><i class="bi bi-phone "></i> +1 5589 55488 55 </span>
+             <span class="px-3"><i class="bi bi-phone "></i> +62 134334773 </span>
           <i class="bi bi-clock"></i> Mon-Sat: 11:00 AM - 23:00 PM
             </div>
             <div class="col-md-6 text-end">
@@ -58,40 +70,55 @@
         </div>
     </nav>
 
-    <section class="about" id="about">
-        <div class="row">
-            <div class="content">
-                <h3 class="title">What is Sekolah Ku?</h3>
-                 <p>My school is an institution for students to get teaching under teacher supervision.In this institution has a formal education system that is generally mandatory.In this system, students experience progress through a series of teaching and learning activities in my school.</p>
-                 <div class="icons-container">
-                    <div class="icons">
-                        <i class='bx bxs-right-top-arrow-circle'></i>
-                        <h3>VISI</h3>
-                        <p>Superior to the implementation of the curriculum</p>
-                        <p>Superior in academic performance</p>
-                        <p>Excellent in non-academic achievements</p>
-                        <p>Superior in OSIS Activity Achievement</p>
-                        <p>Superior in the implementation of religious activities</p>
-                        <p>Excellent in the appreciation of cultural arts and the environment</p>
-                    </div>
-                    <div class="icons">
-                        <i class='bx bx-analyse' ></i>
-                        <h3>MISI</h3>
-                        <p>Carry out curriculum activities effectively and optimally</p>
-                        <p>Carry out learning effectively and innovatively</p>
-						<p>Form a scientific group ("Bisma Science Club")</p>
-						<p>Forming Communication and Technology Information Groups.</p>
-						<p>Form an English Conversation Club (ECC).</p>
-						<p>Forming competition classes at parallel levels based on ranking.</p>
-                    </div>
-                </div>
-            </div>
+    <?php
+include_once 'config/koneksi.php';
+
+// Query untuk mengambil data dari tabel "berita"
+$sql = "SELECT id, title, content, image, date FROM berita ORDER BY date DESC";
+$result = $koneksi->query($sql);
+?>
+
+
+    <section class="content-con">
+        <h1>Portal Berita</h1>
+        <p>Berikut adalah berita terbaru:</p>
+        <hr>
+
+        <div class="news-grid">
+            <?php
+            if ($result->num_rows > 0) {
+                while ($row = $result->fetch_assoc()) {
+                    echo '<div class="card1">';
+                    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Gambar Berita">';
+                    echo '<div class="card2">';
+                    echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
+                    echo '<p>' . htmlspecialchars(substr($row['content'], 0, 150)) . '...</p>';
+                    echo '</div>';
+                    echo '<div class="card-footer">';
+                    echo '<p>' . date('F d, Y', strtotime($row['date'])) . '</p>';
+                    echo '<a href="news_detail.php?id=' . htmlspecialchars($row['id']) . '" class="read-more">Read more</a>';
+                    echo '</div>';
+                    echo '</div>';
+                }
+            } else {
+                echo '<p>Tidak ada berita yang tersedia saat ini.</p>';
+            }
+            ?>
         </div>
     </section>
-    <footer id="contact">
-        <div class="layar-dalam">
-            <div class="copyright">&copy; 2020 My school</div>
-        </div>
-    </footer>
+
+
+<?php
+// Tutup koneksi
+$koneksi->close();
+?>
+
+
+<footer id="contact">
+            <div class="layar-dalam">
+                <div class="copyright">&copy; 2020 My school</div>
+            </div>
+        </footer>
+        <script src="java.js"></script>
 </body>
 </html>

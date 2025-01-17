@@ -51,7 +51,8 @@
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="news_user.php">Berita</a></li>
+                    <li><a href="agenda.php">Agenda</a></li>
                     <li><a href="login.php">Registration</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>

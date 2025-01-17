@@ -58,11 +58,12 @@
             <div class="logo"><a href=''>My school</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.php">Home</a></li>
                     <li><a href="about.html">About</a></li>
-                    <li><a href="agenda.html">Agenda</a></li>
+                    <li><a href="news_user.php">Berita</a></li>
+                    <li><a href="agenda.php">Agenda</a></li>
                     <li><a href="login.php">Registration</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="index.php#contact">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -149,7 +150,12 @@
   <!-- Custom scripts for all pages-->
   <script src="assets/js/sb-admin-2.min.js"></script>
 
- 
+  <footer id="contact">
+            <div class="layar-dalam">
+                <div class="copyright">&copy; 2020 My school</div>
+            </div>
+        </footer>
+        <script src="java.js"></script>
 
 </body>
 </body>

@@ -1,0 +1,89 @@
+
+
+.content-con {
+    width: 80%;
+    margin: 20px auto;
+   
+}
+
+h1 {
+    text-align: center;
+    font-size:2.5rem;
+    color: #364f6b;
+    padding-top: 20px;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card1 {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card1 img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card2 {
+    padding: 15px;
+}
+
+.card2 h3 {
+    font-size: 18px;
+    color: #333;
+    margin: 0 0 10px;
+}
+
+.card2 p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: #f9f9f9;
+}
+
+.card-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #999;
+}
+
+.card-footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
