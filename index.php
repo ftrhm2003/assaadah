@@ -46,15 +46,15 @@
       </section>
     <nav>
         <div class="wrapper1">
-            <div class="logo"><a href=''>My school</a></div>
+            <div class="logo"><a href=''>MTS ASSAADAH</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="news_user.php">Berita</a></li>
-                    <li><a href="agenda.php">Agenda</a></li>
-                    <li><a href="login.php">Registration</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#home">BERANDA</a></li>
+                    <li><a href="about.html">TENTANG</a></li>
+                    <li><a href="news_user.php">BERITA</a></li>
+                    <li><a href="agenda.php">AGENDA</a></li>
+                    <li><a href="login.php">REGISTRASI</a></li>
+                    <li><a href="#contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>
@@ -113,7 +113,7 @@
         <section class="description-container">
             <div>
                 <div>
-                    <h2>History</h2>
+                    <h2>Sejarah</h2>
                     <p>My school was established on October 18, 2020 on an area of ​​9770 m2 which is located on Jalan Tambun Rengas, Kec.Cakung, City.East Jakarta.At the beginning of establishment the number of existing rooms, 6 learning classrooms, 1 teacher room, administration and school principal, 1 skill room, 1 library room, 1 science laboratory room and 1 counseling guidance room, with 1 school principal, 24 teachers,3 administrative staff, 3 school guards, and 144 students.
 The establishment of my school because of seeing the condition of students many who had difficulty finding schools to continue their education to a higher level.</p>
                 </div>
@@ -125,45 +125,42 @@ The establishment of my school because of seeing the condition of students many 
                 <source src="assets/ACS Jakarta School Tour - Secondary.mp4" alt="desc"/>
             </video>
         </section>
-        <section class="content-container">
-            <div class="card">
-                <img src="assets/hardiknas.jpg" alt="card1">
-                <div class="card-body">
-                    <h3>Warning Hardiknas 2023: Collaboration is an effective vehicle in the success of education</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate cumque rerum eum consequatur modi laboriosam eius voluptas. Rem saepe autem corrupti, voluptatum at expedita mollitia quae corporis architecto, debitis quibusdam!</p>
-                </div>
-                <div class="card-footer">
-                    <p>May 02th 2023</p>
-                    <p class="font-weight-bold">Read more</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/student.jpg" alt="card2">
-                <div class="card-body">
-                    <h3>Create Batik Ai and Tourist Chatbot, Singapore Student Exchange</h3>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse harum nihil rerum quaerat unde saepe porro minus magnam autem illo a impedit, reiciendis magni beatae quo velit modi facilis sequi.</p>
-                </div>
-                <div class="card-footer">
-                    <p>March 30th 2023</p>
-                    <p class="font-weight-bold">Read more</p>
-                </div>
-            </div>
-            <div class="card">
-                <img src="assets/raort.jpg" alt="card3">
-                <div class="card-body">
-                    <h3>Reception of even midterm report cards, teacher and parent cooperation are very necessary</h3>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur quibusdam nobis harum quis tempore, voluptates consequatur velit eveniet quasi odit distinctio perspiciatis voluptatem exercitationem? Vitae ipsum laborum asperiores corporis iure.</p>
-                </div>
-                <div class="card-footer">
-                    <p>March 21th 2023</p>
-                    <p class="font-weight-bold">Read more</p>
-                </div>
-            </div>
-        </section>
+
+<?php
+include_once 'config/koneksi.php';
+
+// Query to fetch the 3 newest news entries from the "berita" table
+$sql = "SELECT id, title, content, image, date FROM berita ORDER BY date DESC LIMIT 3";
+$result = $koneksi->query($sql);
+?>
+
+<section class="content-container">
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="card">';
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="News Image" class="card-img">';
+            echo '<div class="card-body">';
+            echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
+            echo '<p>' . htmlspecialchars(substr($row['content'], 0, 150)) . '...</p>';
+            echo '</div>';
+            echo '<div class="card-footer">';
+            echo '<p>' . date('F d, Y', strtotime($row['date'])) . '</p>';
+            echo '<a href="news_detail.php?id=' . htmlspecialchars($row['id']) . '" class="font-weight-bold">Baca Selengkapnya</a>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo '<p>No news available at the moment.</p>';
+    }
+    ?>
+</section>
+
+
     
         <section class="contact" id="contact">
 
-            <h1 class="heading"> <span>contact</span> us </h1>
+            <h1 class="heading"> <span>Kontak</span> Kami </h1>
         
             <div class="icons-container">
                 <div class="icons">

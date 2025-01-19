@@ -59,12 +59,12 @@
             <div class="logo"><a href=''>My school</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="news_user.php">Berita</a></li>
-                    <li><a href="agenda.php">Agenda</a></li>
-                    <li><a href="login.php">Registration</a></li>
-                    <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="index.php">BERANDA</a></li>
+                    <li><a href="about.html">TENTANG</a></li>
+                    <li><a href="news_user.php">BERITA</a></li>
+                    <li><a href="agenda.php">AGENDA</a></li>
+                    <li><a href="login.php">REGISTRASI</a></li>
+                    <li><a href="index.php#contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>
@@ -76,36 +76,29 @@ include_once 'config/koneksi.php';
 // Query untuk mengambil data dari tabel "berita"
 $sql = "SELECT id, title, content, image, date FROM berita ORDER BY date DESC";
 $result = $koneksi->query($sql);
-?>
+?>      
 
-
-    <section class="content-con">
-        <h1>Portal Berita</h1>
-        <p>Berikut adalah berita terbaru:</p>
-        <hr>
-
-        <div class="news-grid">
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo '<div class="card1">';
-                    echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="Gambar Berita">';
-                    echo '<div class="card2">';
-                    echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
-                    echo '<p>' . htmlspecialchars(substr($row['content'], 0, 150)) . '...</p>';
-                    echo '</div>';
-                    echo '<div class="card-footer">';
-                    echo '<p>' . date('F d, Y', strtotime($row['date'])) . '</p>';
-                    echo '<a href="news_detail.php?id=' . htmlspecialchars($row['id']) . '" class="read-more">Read more</a>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-            } else {
-                echo '<p>Tidak ada berita yang tersedia saat ini.</p>';
-            }
-            ?>
-        </div>
-    </section>
+<section class="content-container">
+    <?php
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            echo '<div class="card">';
+            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="News Image" class="card-img">';
+            echo '<div class="card-body">';
+            echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
+            echo '<p>' . htmlspecialchars(substr($row['content'], 0, 150)) . '...</p>';
+            echo '</div>';
+            echo '<div class="card-footer">';
+            echo '<p>' . date('F d, Y', strtotime($row['date'])) . '</p>';
+            echo '<a href="news_detail.php?id=' . htmlspecialchars($row['id']) . '" class="font-weight-bold">Baca Selengkapnya</a>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo '<p>No news available at the moment.</p>';
+    }
+    ?>
+</section>
 
 
 <?php

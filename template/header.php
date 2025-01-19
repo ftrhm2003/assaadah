@@ -63,7 +63,7 @@
           <li class="nav-item">
             <a class="nav-link" href="nilai.php">
               <i class="fas fa-fw fa-list"></i>
-              <span>Grades</span></a>
+              <span>Nilai</span></a>
           </li>
 
           <!-- Divider -->
@@ -76,13 +76,13 @@
           </li>
 
           <!-- Divider -->
-          <hr class="sidebar-divider my-0">
+          <!-- <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
             <a class="nav-link" href="addpayment.php">
               <i class="fas fa-fw fa-user"></i>
               <span>Payment</span></a>
-          </li>
+          </li> -->
 
       <?php } ?>
 
@@ -103,17 +103,17 @@
           <li class="nav-item">
             <a class="nav-link" href="pendaftaran.php">
               <i class="fas fa-fw fa-list"></i>
-              <span>Registration data</span></a>
+              <span>Data Registrasi</span></a>
           </li>
 
-          <!-- Divider -->
+          <!-- Divider
           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
             <a class="nav-link" href="paymentdetail.php">
               <i class="fas fa-fw fa-list"></i>
               <span>Payment data</span></a>
-          </li>
+          </li> -->
 
           <!-- Divider -->
           <hr class="sidebar-divider my-0">
@@ -121,7 +121,7 @@
           <li class="nav-item">
             <a class="nav-link" href="news.php">
               <i class="fas fa-fw fa-list"></i>
-              <span>News data</span></a>
+              <span>Data Berita </span></a>
           </li>
 
           <!-- Divider -->
@@ -130,7 +130,7 @@
           <li class="nav-item">
             <a class="nav-link" href="agenda.php">
               <i class="fas fa-fw fa-list"></i>
-              <span>Agenda data</span></a>
+              <span>Data Agenda </span></a>
           </li>
            
       
@@ -142,7 +142,7 @@
       <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
           <i class="fas fa-fw fa-sign-out-alt"></i>
-          <span>Logout</span></a>
+          <span>Keluar</span></a>
       </li>
 
       <!-- Divider -->
@@ -202,7 +202,7 @@
                 
                 <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
                   <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                  Logout
+                  Keluar
                 </a>
               </div>
             </li>

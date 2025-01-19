@@ -24,14 +24,31 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
             <link rel="stylesheet" href="news_detail.css"> <!-- Tambahkan file CSS Anda -->
         </head>
         <body>
-            <div class="news-detail-container">
-                <h1><?php echo htmlspecialchars($row['title']); ?></h1>
-                <p><em><?php echo date('d M Y', strtotime($row['date'])); ?></em></p>
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" alt="Gambar Berita">
-                <p><?php echo nl2br(htmlspecialchars($row['content'])); ?></p>
-                <a href="news_user.php" class="back-link">Kembali ke Beranda</a>
-            </div>
-        </body>
+        <div class="news-detail-container">
+    <!-- News Title -->
+    <h1><?php echo htmlspecialchars($row['title']); ?></h1>
+
+    <!-- News Date -->
+    <p><em>Published on: <?php echo date('d M Y', strtotime($row['date'])); ?></em></p>
+
+    <!-- News Image -->
+    <figure>
+        <img src="data:image/jpeg;base64,<?php echo base64_encode($row['image']); ?>" alt="<?php echo htmlspecialchars($row['title']); ?> Image">
+        <figcaption><?php echo htmlspecialchars($row['title']); ?></figcaption>
+    </figure>
+
+    <!-- News Content (Render HTML content) -->
+    <article>
+        <!-- Using echo to display the content as HTML instead of plain text -->
+        <?php echo $row['content']; ?>
+    </article>
+
+    <!-- Back to Home Button -->
+    <a href="news_user.php" class="back-link">Back to Home</a>
+</div>
+
+</body>
+
         </html>
         <?php
     } else {

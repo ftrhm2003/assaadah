@@ -5,7 +5,7 @@ include_once 'news_control.php';
 include('../template/header.php');
 
 // Query untuk mengambil data dari tabel "berita"
-$sql = "SELECT id, title, content, image, date FROM berita";
+$sql = "SELECT id, title, content, image, date FROM berita ORDER BY date desc";
 $result = $koneksi->query($sql);
 
 ?>
@@ -32,69 +32,146 @@ $result = $koneksi->query($sql);
 <?php } ?>
 
 <style>
-        button {
-            background-color: #007BFF;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-        }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f4f4f9;
+        color: #333;
+    }
 
-        button:hover {
-            background-color: #0056b3;
-        }
-        
-        .delete-button {
-            background-color: red;
-        }
+    button {
+        background-color: #007BFF;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+    }
 
-        .delete-button:hover {
-            background-color: darkred;
-        }
+    button:hover {
+        background-color: #0056b3;
+    }
+    
+    .delete-button {
+        background-color: #dc3545;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-    </style>
+    .delete-button:hover {
+        background-color: #b02a37;
+    }
 
-    <a href="tambahnews.php"><button>Tambah Berita</button></a> 
-    <table border="1" cellpadding="10" cellspacing="0">
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Title</th>
-                <th>Content</th>
-                <th>Image</th>
-                <th>Date</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php
-            if ($result->num_rows > 0) {
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . htmlspecialchars($row['id']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['title']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['content']) . "</td>";
-                    echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image']) . "' alt='Image' style='width:150px; height:auto;'></td>";
-                    echo "<td>" . htmlspecialchars($row['date']) . "</td>";
-                    echo "<td>";
-                    echo "<a href='editnews.php?id=" . htmlspecialchars($row['id']) . "'><button class='edit-button'>Edit</button></a> ";
-                    echo "<a href='deletenews.php?id=" . htmlspecialchars($row['id']) . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus berita ini?\");'><button class='delete-button'>Delete</button></a>";
-                    echo "</td>";
-                    echo "</tr>";
+    .edit-button {
+        background-color: #28a745;
+    }
+
+    .edit-button:hover {
+        background-color: #218838;
+    }
+
+    a {
+        text-decoration: none;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        background: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    thead {
+        background-color: #007BFF;
+        color: white;
+    }
+
+    thead th {
+        padding: 15px;
+        text-align: left;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    tbody tr {
+        border-bottom: 1px solid #ddd;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    tbody td {
+        padding: 15px;
+        vertical-align: middle;
+        color: #555;
+    }
+
+    tbody img {
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    tbody td:last-child {
+        display: flex;
+        gap: 10px;
+    }
+
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .add-button {
+        display: inline-block;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+</style>
+
+<div class="table-container">
+        <a href="tambahnews.php" class="add-button"><button>Tambah Berita</button></a>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Content</th>
+                    <th>Image</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                if ($result->num_rows > 0) {
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['title']) . "</td>";
+                        echo "<td>" . htmlspecialchars(substr($row['content'], 0, 100)) . "...</td>";
+                        echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image']) . "' alt='Image' style='width:150px; height:auto;'></td>";
+                        echo "<td>" . htmlspecialchars($row['date']) . "</td>";
+                        echo "<td>";
+                        echo "<a href='editnews.php?id=" . htmlspecialchars($row['id']) . "'><button class='edit-button'>Edit</button></a>";
+                        echo "<a href='deletenews.php?id=" . htmlspecialchars($row['id']) . "' onclick='return confirm(\"Apakah Anda yakin ingin menghapus berita ini?\");'><button class='delete-button'>Delete</button></a>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6' style='text-align: center;'>Tidak ada data tersedia</td></tr>";
                 }
-            } else {
-                echo "<tr><td colspan='5'>Tidak ada data tersedia</td></tr>";
-            }
-            ?>
-        </tbody>
-    </table>
+                ?>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
 <?php include('../template/footer.php'); ?>

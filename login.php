@@ -58,12 +58,12 @@
             <div class="logo"><a href=''>My school</a></div>
             <div class="menu">
                 <ul>
-                    <li><a href="index.php">Home</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="news_user.php">Berita</a></li>
-                    <li><a href="agenda.php">Agenda</a></li>
-                    <li><a href="login.php">Registration</a></li>
-                    <li><a href="index.php#contact">Contact</a></li>
+                <li><a href="index.php">BERANDA</a></li>
+                    <li><a href="about.html">TENTANG</a></li>
+                    <li><a href="news_user.php">BERITA</a></li>
+                    <li><a href="agenda.php">AGENDA</a></li>
+                    <li><a href="login.php">REGISTRASI</a></li>
+                    <li><a href="index.php#contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +86,7 @@
                   <div class="text-center">
                     
 
-                    <h1 class="h4 text-gray-900" style="margin-bottom: 20px;">Student registration application</h1>
+                    <h1 class="h4 text-gray-900" style="margin-bottom: 20px;">PENDAFTARAN SISWA</h1>
                     
 
                     <?php 
@@ -121,12 +121,12 @@
                       <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" style="text-align: center;">
                     </div>
                     <button type="submit" name="btn_login" value="login" href="" class="btn btn-primary btn-user btn-block" style="display: block; margin: auto;">
-                      Login
+                      Masuk
                     </button>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="registrasi.php">New Student Registration!</a>
+                    <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
                   </div>
                 </div>
               </div>

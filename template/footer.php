@@ -28,15 +28,15 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Do you want to log out?</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Yakin Ingin Keluar?</h5>
           <button class="close" type="button" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">×</span>
           </button>
         </div>
-        <div class="modal-body">You will exit the application.</div>
+        <div class="modal-body">Anda Akan Keluar Dari Aplikasi.</div>
         <div class="modal-footer">
-          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelled</button>
-          <a class="btn btn-danger" href="<?= $base_url ?>/logout_control.php">Logout</a>
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Batalkan</button>
+          <a class="btn btn-danger" href="<?= $base_url ?>/logout_control.php">Keluar</a>
         </div>
       </div>
     </div>

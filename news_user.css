@@ -87,3 +87,10 @@ h1 {
 .back-link:hover {
     text-decoration: underline;
 }
+
+.card-img {
+    width: 100%; /* Make the image width fill the parent container */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the allocated space without stretching */
+    border-radius: 8px; /* Optional: Add rounded corners */
+}
