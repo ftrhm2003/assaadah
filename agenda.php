@@ -35,7 +35,7 @@
     <!-- Navbar -->
     <nav>
         <div class="wrapper1">
-            <div class="logo"><a href="#">My School</a></div>
+            <div class="logo"><a href="#">MTS ASSA'ADAH</a></div>
             <div class="menu">
                 <ul>
                 <li><a href="index.php">BERANDA</a></li>

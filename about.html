@@ -10,6 +10,112 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <style>
+        .about {
+    background: linear-gradient(to bottom right, #f0f4f8, #e3e9ee);
+    padding: 50px 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.title span {
+    color: #0066cc;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.feature {
+    background: #cfd1da;
+    border-radius: 30px;
+    box-shadow: 1 40px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    flex: 1;
+    min-width: 300px;
+}
+
+.feature-img {
+    display: block; /* Ensures there is no inline space around the image */
+    margin: 0; /* Removes any default margin */
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+
+.feature-content {
+    padding: 20px;
+}
+
+.feature h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.feature ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feature ul li {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.feature ul li::before {
+    content: "•";
+    color: #0066cc;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.video-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.video-container {
+    max-width: 1020px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 90px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.about-video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .about-video {
+        height: auto;
+    }
+}
+
+.row {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevents container overflow */
+}
+
+
+    </style>
+
 </head>
 <body>
     <section id="topbar" class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-primary text-white topbar-transparent">
@@ -44,7 +150,7 @@
       </section>
     <nav>
         <div class="wrapper1">
-            <div class="logo"><a href=''>My school</a></div>
+            <div class="logo"><a href=''>MTS ASSA'ADAH</a></div>
             <div class="menu">
                 <ul>
                     <li><a href="index.php">BERANDA</a></li>
@@ -59,35 +165,64 @@
     </nav>
 
     <section class="about" id="about">
-        <div class="row">
-            <div class="content">
-                <h3 class="title">What is Sekolah Ku?</h3>
-                 <p>My school is an institution for students to get teaching under teacher supervision.In this institution has a formal education system that is generally mandatory.In this system, students experience progress through a series of teaching and learning activities in my school.</p>
-                 <div class="icons-container">
-                    <div class="icons">
-                        <i class='bx bxs-right-top-arrow-circle'></i>
-                        <h3>VISI</h3>
-                        <p>Superior to the implementation of the curriculum</p>
-                        <p>Superior in academic performance</p>
-                        <p>Excellent in non-academic achievements</p>
-                        <p>Superior in OSIS Activity Achievement</p>
-                        <p>Superior in the implementation of religious activities</p>
-                        <p>Excellent in the appreciation of cultural arts and the environment</p>
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    <h3 class="title">Apa itu <span>MTs Assa'adah?</span></h3>
+                    <p class="description">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+                    </p>
+                </div>
+            </div>
+    
+            <!-- Video Section -->
+            <div class="row video-section">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline class="about-video">
+                        <source src="assets/ACS Jakarta School Tour - Secondary.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+
+            <br><br>
+    
+            <!-- VISI and MISI Sections -->
+            <div class="row features">
+                <div class="feature">
+                    
+                    <div class="feature-content">
+                        <h3><i class='bx bxs-right-top-arrow-circle'></i> VISI</h3>
+                        <ul>
+                            <li>Excellence in curriculum implementation</li>
+                            <li>Superiority in academic performance</li>
+                            <li>Achievements in non-academic fields</li>
+                            <li>Leadership in OSIS activities</li>
+                            <li>Commitment to religious practices</li>
+                            <li>Appreciation of cultural arts and environmental care</li>
+                        </ul>
                     </div>
-                    <div class="icons">
-                        <i class='bx bx-analyse' ></i>
-                        <h3>MISI</h3>
-                        <p>Carry out curriculum activities effectively and optimally</p>
-                        <p>Carry out learning effectively and innovatively</p>
-						<p>Form a scientific group ("Bisma Science Club")</p>
-						<p>Forming Communication and Technology Information Groups.</p>
-						<p>Form an English Conversation Club (ECC).</p>
-						<p>Forming competition classes at parallel levels based on ranking.</p>
+                </div>
+                
+                <div class="feature">
+                    
+                    <div class="feature-content">
+                        <h3><i class='bx bx-analyse'></i> MISI</h3>
+                        <ul>
+                            <li>Effectively and optimally implement curriculum activities</li>
+                            <li>Innovative and engaging learning experiences</li>
+                            <li>Form a scientific group ("Bisma Science Club")</li>
+                            <li>Develop Communication & Technology Information Groups</li>
+                            <li>Establish an English Conversation Club (ECC)</li>
+                            <li>Create competition classes at parallel levels</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <footer id="contact">
         <div class="layar-dalam">
             <div class="copyright">&copy; 2020 My school</div>

@@ -46,7 +46,7 @@
       </section>
     <nav>
         <div class="wrapper1">
-            <div class="logo"><a href=''>MTS ASSAADAH</a></div>
+            <div class="logo"><a href=''>MTS ASSA'ADAH</a></div>
             <div class="menu">
                 <ul>
                     <li><a href="#home">BERANDA</a></li>
