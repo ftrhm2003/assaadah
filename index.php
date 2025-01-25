@@ -12,6 +12,9 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
 </head>
 <body>
     <section id="topbar" class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-primary text-white topbar-transparent">
@@ -61,70 +64,71 @@
     </nav>
 
      
-<div class="wrapper2">
+    <div class="wrapper2">
     <header id="home">
-        
         <div class="overlay">
-          <img src="assets/sekolah.jpg" alt="">
-          <div id="intro">
-            <h3>My school</h3>
-            <p>
-                Achieve your dreams by becoming knowledgeable
-            </p>
-          </div>
-        </div>
-      
-        <div class="overlay"> 
-          <img src="assets/OPENa.jpg" alt="">
-          <div id="intro">
-            <h3>My school</h3>
-            <p>
-                Achieve your dreams by becoming knowledgeable
-            </p>
-          </div>
-        </div>
-      
-        <div class="overlay">
-          <img src="assets/Pengertian-Sekolah.jpg" alt="">
-          <div id="intro">
-            <h3>My school</h3>
-            <p>
-                Achieve your dreams by becoming knowledgeable
-            </p>
-          </div>
-        </div>
-      
-      
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </header>
- </div>
-
-      <br>
-      
-      
-      <div style="text-align:center">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-      </div>
-  
-    
-        <section class="description-container">
-            <div>
-                <div>
-                    <h2>Sejarah</h2>
-                    <p>My school was established on October 18, 2020 on an area of ​​9770 m2 which is located on Jalan Tambun Rengas, Kec.Cakung, City.East Jakarta.At the beginning of establishment the number of existing rooms, 6 learning classrooms, 1 teacher room, administration and school principal, 1 skill room, 1 library room, 1 science laboratory room and 1 counseling guidance room, with 1 school principal, 24 teachers,3 administrative staff, 3 school guards, and 144 students.
-The establishment of my school because of seeing the condition of students many who had difficulty finding schools to continue their education to a higher level.</p>
-                </div>
-                <div class="description-left-footer">
-                    <p class="font-weight-bold"></p>
-                </div>
+        <video autoplay muted loop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
+        <source src="assets/ACS Jakarta School Tour - Secondary.mp4" type="video/mp4">
+        </video>
+            <div id="intro">
+                <h3>My School</h3>
+                <p>Achieve your dreams by becoming knowledgeable</p>
             </div>
-            <video autoplay muted loop>
-                <source src="assets/ACS Jakarta School Tour - Secondary.mp4" alt="desc"/>
-            </video>
-        </section>
+        </div>
+    </header>
+</div>
+  
+<br>
+    
+<section class="description-container">
+<div>
+    <div>
+      <h2>Sejarah Sekolah</h2>
+      <p>
+        My school was established on October 18, 2020 on an area of ​​9770 m2 which is located on Jalan Tambun Rengas, Kec.Cakung, City.East Jakarta. At the beginning of establishment the number of existing rooms, 6 learning classrooms, 1 teacher room, administration and school principal, 1 skill room, 1 library room, 1 science laboratory room and 1 counseling guidance room, with 1 school principal, 24 teachers, 3 administrative staff, 3 school guards, and 144 students. The establishment of my school because of seeing the condition of students many who had difficulty finding schools to continue their education to a higher level.
+      </p>
+    </div>
+    <div class="description-left-footer">
+      <p class="font-weight-bold"></p>
+    </div>
+  </div>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="assets/sekolah.jpg" alt="Foto Sekolah 1" />
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/OPENa.jpg" alt="Foto Sekolah 2" />
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/student.jpg" alt="Foto Sekolah 3" />
+      </div>
+    </div>
+    
+  </div>
+</section>
+
+
+<style>
+.swiper-container {
+    height: 300px;
+    margin: 0px 0;
+    padding: 1 10%;
+    display: flex;
+    overflow: hidden;
+}
+
+.swiper-slide img {
+    width: 500px;
+    height: 100%;
+    object-fit: cover; 
+    padding: 0; 
+}
+</style>
+
+   
+
+        <br>
 
 <?php
 include_once 'config/koneksi.php';
@@ -156,7 +160,7 @@ $result = $koneksi->query($sql);
     ?>
 </section>
 
-
+<br>
     
         <section class="contact" id="contact">
 
@@ -190,6 +194,22 @@ $result = $koneksi->query($sql);
                 <div class="copyright">&copy; 2020 My school</div>
             </div>
         </footer>
-        <script src="java.js"></script>
+
+        <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const swiper = new Swiper('.swiper-container', {
+      loop: true, // Looping slide
+      
+      autoplay: {
+        delay: 5000, // 3 detik
+        disableOnInteraction: false,
+      },
+      effect: 'slide', // Pastikan efek transisi digunakan
+    });
+  });
+</script>
+
+
+      
 </body>
 </html>

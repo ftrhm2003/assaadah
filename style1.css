@@ -200,7 +200,7 @@ header .overlay {
     width: 500px;
   }
   
-  .description-container > video {
+  .description-container > image {
     width: 40%;
     object-fit: cover;
   }
