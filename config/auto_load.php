@@ -4,7 +4,7 @@ session_start();
 
 include('koneksi.php');
 
-$base_url = "http://localhost/pendaftaran";
+$base_url = "http://localhost/assaadah";
 
 $uri_segment = explode("/", parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 // var_dump($uri_segment);
