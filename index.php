@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My school</title>
 
-    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="index.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet"
@@ -49,7 +49,9 @@
       </section>
     <nav>
         <div class="wrapper1">
-            <div class="logo"><a href=''>MTS ASSA'ADAH</a></div>
+        <div class="logo">
+        <img src="assets/assadah.png" alt="Logo Website">
+        </div>
             <div class="menu">
                 <ul>
                     <li><a href="#home">BERANDA</a></li>
@@ -71,14 +73,14 @@
         <source src="assets/ACS Jakarta School Tour - Secondary.mp4" type="video/mp4">
         </video>
             <div id="intro">
-                <h3>My School</h3>
-                <p>Achieve your dreams by becoming knowledgeable</p>
+                <h3>MTs Assa’adah</h3>
+                <p>Maju bersama kebahagian</p>
             </div>
         </div>
     </header>
 </div>
   
-<br>
+
     
 <section class="description-container">
 <div>
@@ -127,8 +129,6 @@
 </style>
 
    
-
-        <br>
 
 <?php
 include_once 'config/koneksi.php';
