@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
 <body>
@@ -37,19 +38,23 @@
           </div>
         </div>
       </section>
-    <nav>
-        <div class="wrapper1">
-        <div class="logo">
-        <img src="assets/assadah.png" alt="Logo Website">
-        </div>
-            <div class="menu">
-                <ul>
-                    <li><a href="#home">BERANDA</a></li>
-                    <li><a href="about.php">TENTANG</a></li>
-                    <li><a href="news_user.php">BERITA</a></li>
-                    <li><a href="agenda.php">AGENDA</a></li>
-                    <li><a href="login.php">REGISTRASI</a></li>
-                    <li><a href="#contact">KONTAK</a></li>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="assets/assadah.png" alt="Logo Website" class="me-2" style="height: 80px;">
+</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">BERANDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">TENTANG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news_user.php">BERITA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agenda.php">AGENDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">REGISTRASI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>
