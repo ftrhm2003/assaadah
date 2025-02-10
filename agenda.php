@@ -54,8 +54,8 @@
         </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#home">BERANDA</a></li>
-                    <li><a href="about.html">TENTANG</a></li>
+                    <li><a href="index.php">BERANDA</a></li>
+                    <li><a href="about.php">TENTANG</a></li>
                     <li><a href="news_user.php">BERITA</a></li>
                     <li><a href="agenda.php">AGENDA</a></li>
                     <li><a href="login.php">REGISTRASI</a></li>
@@ -95,7 +95,7 @@
 
     <footer id="contact">
             <div class="layar-dalam">
-                <div class="copyright">&copy; 2020 My school</div>
+                <div class="copyright">&copy; 2025 MTs Assa'adah</div>
             </div>
         </footer>
 

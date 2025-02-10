@@ -21,27 +21,17 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6   text-start">
-             <span class="px-3"><i class="bi bi-phone "></i> +62 134334773 </span>
-          <i class="bi bi-clock"></i> Mon-Sat: 11:00 AM - 23:00 PM
+          <i class="bi bi-clock"></i> Senin - Jumat: 07:00 - 15:00 
             </div>
             <div class="col-md-6 text-end">
-                <a href="" class="me-4 text-reset">
+                <a href="https://www.facebook.com/mts.assaadah.3" class="me-4 text-reset">
                     <i class="bi bi-facebook"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
+                <a href="https://www.instagram.com/mtsassaadah?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="me-4 text-reset">
                     <i class="bi bi-instagram"></i>
                 </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-github"></i>
+                <a href="https://www.youtube.com/@mtsassaadahofficial3446" class="me-4 text-reset">
+                    <i class="bi bi-youtube"></i>
                 </a>
             </div>
           </div>
@@ -55,7 +45,7 @@
             <div class="menu">
                 <ul>
                     <li><a href="#home">BERANDA</a></li>
-                    <li><a href="about.html">TENTANG</a></li>
+                    <li><a href="about.php">TENTANG</a></li>
                     <li><a href="news_user.php">BERITA</a></li>
                     <li><a href="agenda.php">AGENDA</a></li>
                     <li><a href="login.php">REGISTRASI</a></li>
@@ -70,61 +60,198 @@
     <header id="home">
         <div class="overlay">
         <video autoplay muted loop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
-        <source src="assets/ACS Jakarta School Tour - Secondary.mp4" type="video/mp4">
+        <source src="assets/vidio.mp4" type="video/mp4">
         </video>
             <div id="intro">
                 <h3>MTs Assa’adah</h3>
-                <p>Maju bersama kebahagian</p>
+                <p>Bahagia itu dimulai dari sini</p>
             </div>
         </div>
     </header>
 </div>
   
+<br>
+<br>
+    
+<section class="gallary">
+      <div class="section__container gallary__container">
+        <div class="image__gallary">
+          <div class="gallary__col">
+            <img src="assets/gambar.png" alt="gallary" />
+          </div>
+          <div class="gallary__col">
+            <img src="assets/gambar.png" alt="gallary" />
+            <img src="assets/gambar.png" alt="gallary" />
+          </div>
+        </div>
+        <div class="gallary__content">
+          <div>
+            <h2 class="section__title">
+              Sejarah Sekolah
+            </h2>
+            <p class="section__subtitle">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+            <a href="about.php">
+            <button class="btn">Tentang Sekolah</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    
-<section class="description-container">
-<div>
-    <div>
-      <h2>Sejarah Sekolah</h2>
-      <p>
-        My school was established on October 18, 2020 on an area of ​​9770 m2 which is located on Jalan Tambun Rengas, Kec.Cakung, City.East Jakarta. At the beginning of establishment the number of existing rooms, 6 learning classrooms, 1 teacher room, administration and school principal, 1 skill room, 1 library room, 1 science laboratory room and 1 counseling guidance room, with 1 school principal, 24 teachers, 3 administrative staff, 3 school guards, and 144 students. The establishment of my school because of seeing the condition of students many who had difficulty finding schools to continue their education to a higher level.
-      </p>
-    </div>
-    <div class="description-left-footer">
-      <p class="font-weight-bold"></p>
-    </div>
-  </div>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide">
-        <img src="assets/sekolah.jpg" alt="Foto Sekolah 1" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/OPENa.jpg" alt="Foto Sekolah 2" />
-      </div>
-      <div class="swiper-slide">
-        <img src="assets/student.jpg" alt="Foto Sekolah 3" />
-      </div>
-    </div>
-    
-  </div>
+
+<section class="quote">
+        <div class="layar-dalam">
+            <p>Pendidikan bukan cuma pergi ke sekolah dan mendapatkan gelar. Pendidikan adalah tentang memperluas wawasan dan menyerap ilmu kehidupan.</p>
+        </div>
 </section>
 
 
 <style>
-.swiper-container {
-    height: 300px;
-    margin: 0px 0;
-    padding: 1 10%;
-    display: flex;
-    overflow: hidden;
+.gallary__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
 }
 
-.swiper-slide img {
-    width: 500px;
-    height: 100%;
-    object-fit: cover; 
-    padding: 0; 
+.image__gallary {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  transform: translateX(190px); /* Sesuaikan angka sesuai kebutuhan */
+}
+
+.gallary__col {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+}
+
+.gallary__col img {
+  width: 100%;  /* Atur ukuran sesuai keinginan, misal 70% dari ukuran aslinya */
+  height: auto; /* Menjaga aspek rasio gambar */
+  border-radius: 1rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+  display: block; /* Menghindari space tambahan */
+  margin: auto; /* Agar gambar tetap berada di tengah */
+  
+}
+
+
+.gallary__content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: justify;
+}
+
+.gallary__content > div {
+  max-width: 400px;
+}
+
+.gallary__content .section__subtitle {
+  margin-bottom: 2rem;
+}
+
+@media (width < 600px) {
+
+  .gallary__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+:root {
+  --primary-color: #3685fb;
+  --primary-color-dark: #2f73d9;
+  --secondary-color: #fafcff;
+  
+  --extra-light: #ffffff;
+
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+.btn {
+  padding: 0.75rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  color: var(--extra-light);
+  background-color: var(--primary-color);
+  border-radius: 5rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+section.quote {
+    background: url("assets/alam.jpg") no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: #fff;
+    font-size: 20px;
+    font-style: italic;
+    padding: 100px;
+}
+
+section.quote .layar-dalam p {
+    display: inline;
+    background: url("assets/quote-icon.png") no-repeat;
+    padding: 40px;
+}
+
+.tim img {
+    width: 100%;
+    box-shadow: 0px -10px 30px #ccc;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.support,
+.tim {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.support h6,
+.tim h6 {
+    margin: 0px;
+    margin-top: 20px;
+    padding: 0px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.support img {
+    width: 50px;
+}
+
+.support div,
+.tim div {
+    text-align: center;
+    width: 26%;
 }
 </style>
 
@@ -169,15 +296,14 @@ $result = $koneksi->query($sql);
             <div class="icons-container">
                 <div class="icons">
                     <i class="fas fa-phone"></i>
-                    <h3>our number</h3>
-                    <p>089-778-7868</p>
-                    <p>098-657-6546</p>
+                    <h3>Hubungi kami</h3>
+                    <p>Telepon Sekolah: 02122418329</p>
+                    <p>PPDB Center: 085939384646</p>
                 </div>
                 <div class="icons">
                     <i class="fas fa-envelope"></i>
-                    <h3>our email</h3>
-                    <p>My school@gmail.com</p>
-                    <p>education@gmail.com</p>
+                    <h3>Email kami</h3>
+                    <p>email: mtsassaadah73@gmail.com </p>
                 </div>
             </div>
         
@@ -191,7 +317,7 @@ $result = $koneksi->query($sql);
 
         <footer id="contact">
             <div class="layar-dalam">
-                <div class="copyright">&copy; 2020 My school</div>
+                <div class="copyright">&copy; 2025 MTs Assa'adah</div>
             </div>
         </footer>
 
