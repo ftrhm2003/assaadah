@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My school</title>
+    <title>MTs Assa'adah Cakung</title>
 
     <link rel="stylesheet" href="index.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -50,7 +50,7 @@
     <nav>
         <div class="wrapper1">
         <div class="logo">
-        <img src="assets/assadah.png" alt="Logo Website">
+        <img src="assets/image.png" alt="Logo Website">
         </div>
             <div class="menu">
                 <ul>
@@ -87,7 +87,7 @@
     <div>
       <h2>Sejarah Sekolah</h2>
       <p>
-        My school was established on October 18, 2020 on an area of ​​9770 m2 which is located on Jalan Tambun Rengas, Kec.Cakung, City.East Jakarta. At the beginning of establishment the number of existing rooms, 6 learning classrooms, 1 teacher room, administration and school principal, 1 skill room, 1 library room, 1 science laboratory room and 1 counseling guidance room, with 1 school principal, 24 teachers, 3 administrative staff, 3 school guards, and 144 students. The establishment of my school because of seeing the condition of students many who had difficulty finding schools to continue their education to a higher level.
+        MTs Assa'adah Cakung was established on October 18, 2020 on an area of ​​9770 m2 which is located on Jalan Tambun Rengas, Kec.Cakung, City.East Jakarta. At the beginning of establishment the number of existing rooms, 6 learning classrooms, 1 teacher room, administration and school principal, 1 skill room, 1 library room, 1 science laboratory room and 1 counseling guidance room, with 1 school principal, 24 teachers, 3 administrative staff, 3 school guards, and 144 students. The establishment of MTs Assa'adah Cakung because of seeing the condition of students many who had difficulty finding schools to continue their education to a higher level.
       </p>
     </div>
     <div class="description-left-footer">
@@ -176,7 +176,7 @@ $result = $koneksi->query($sql);
                 <div class="icons">
                     <i class="fas fa-envelope"></i>
                     <h3>our email</h3>
-                    <p>My school@gmail.com</p>
+                    <p>MTs Assa'adah Cakung@gmail.com</p>
                     <p>education@gmail.com</p>
                 </div>
             </div>
@@ -191,7 +191,7 @@ $result = $koneksi->query($sql);
 
         <footer id="contact">
             <div class="layar-dalam">
-                <div class="copyright">&copy; 2020 My school</div>
+                <div class="copyright">&copy; 2020 MTs Assa'adah Cakung</div>
             </div>
         </footer>
 

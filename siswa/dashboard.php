@@ -76,12 +76,12 @@
                     <div class="col-auto">
                       <i class="fas fa-spinner text-warning mb-3" style="font-size: 90px;"></i>
                     </div>
-                    <p class="card-text">Thank you for registering at my school</p>
+                    <p class="card-text">Thank you for registering at MTs Assa'adah Cakung</p>
                     <p class="card-text">Announcement on the date: </p>
                     <span class="badge badge-danger" style="font-size: 20px;">March 12, 2025</span>
                   </div>
                   <div class="card-footer text-muted">
-                    <marquee style="margin-bottom: -5px;">My school</marquee>
+                    <marquee style="margin-bottom: -5px;">MTs Assa'adah Cakung</marquee>
                   </div>
                 </div>
               </div>
@@ -100,11 +100,11 @@
                     <div class="col-auto">
                       <i class="far fa-check-circle text-success mb-3" style="font-size: 90px;"></i>
                     </div>
-                    <p class="card-text">Congratulations you pass the selection at my school.Re -register on the date: </p>
+                    <p class="card-text">Congratulations you pass the selection at MTs Assa'adah Cakung.Re -register on the date: </p>
                     <span class="badge badge-danger" style="font-size: 20px;">March 12, 2025</span>
                   </div>
                   <div class="card-footer text-muted">
-                    <marquee style="margin-bottom: -5px;">My school</marquee>
+                    <marquee style="margin-bottom: -5px;">MTs Assa'adah Cakung</marquee>
                   </div>
                 </div>
               </div>
@@ -127,7 +127,7 @@
                     <p class="card-text">You haven't passed.Thank you for following the selection well. </p>
                   </div>
                   <div class="card-footer text-muted">
-                    <marquee style="margin-bottom: -5px;">My school</marquee>
+                    <marquee style="margin-bottom: -5px;">MTs Assa'adah Cakung</marquee>
                   </div>
                 </div>
               </div>

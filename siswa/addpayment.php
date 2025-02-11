@@ -65,7 +65,7 @@ include('../template/headersiswa.php');  // Menyertakan header template
                     </div>
 
                     <div class="text-center mt-4">
-                    <p style="margin: 5px 0; font-weight: bold; color: black;">MY SCHOOL</p>
+                    <p style="margin: 5px 0; font-weight: bold; color: black;">MTs Assa'adah Cakung</p>
                     <p style="margin: 5px 0; font-weight: bold; color: black;">Mandiri Bank - 98762450101</p>
                     </div>
 

@@ -156,7 +156,7 @@ $result = $koneksi->query($sql);
                         echo "<tr>";
                         echo "<td>" . htmlspecialchars($row['id']) . "</td>";
                         echo "<td>" . htmlspecialchars($row['title']) . "</td>";
-                        echo "<td>" . htmlspecialchars(substr($row['content'], 0, 100)) . "...</td>";
+                        echo "<td>" . htmlspecialchars(substr(strip_tags($row['content']), 0, 100)) . "...</td>";
                         echo "<td><img src='data:image/jpeg;base64," . base64_encode($row['image']) . "' alt='Image' style='width:150px; height:auto;'></td>";
                         echo "<td>" . htmlspecialchars($row['date']) . "</td>";
                         echo "<td>";

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My school</title>
+    <title>MTs Assa'adah Cakung</title>
     <link rel="stylesheet" href="index.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -127,28 +127,12 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6   text-start">
-             <span class="px-3"><i class="bi bi-phone "></i> +1 5589 55488 55 </span>
-          <i class="bi bi-clock"></i> Mon-Sat: 11:00 AM - 23:00 PM
+          <i class="bi bi-clock"></i> Senin - Jumat: 07:00 - 15:00 
             </div>
             <div class="col-md-6 text-end">
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-github"></i>
-                </a>
+                <a href="https://www.facebook.com/mts.assaadah.3" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/mtsassaadah?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/@mtsassaadahofficial3446" class="text-white mx-2"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
         </div>
@@ -156,7 +140,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="assets/assadah.png" alt="Logo Website" class="me-2" style="height: 80px;">
+    <img src="assets/image.png" alt="Logo Website" class="me-2" style="height: 80px;">
 </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -169,7 +153,7 @@
                     <li class="nav-item"><a class="nav-link" href="news_user.php">BERITA</a></li>
                     <li class="nav-item"><a class="nav-link" href="agenda.php">AGENDA</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">REGISTRASI</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">KONTAK</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php #contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>

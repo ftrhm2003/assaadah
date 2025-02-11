@@ -49,7 +49,7 @@
                 <div class="p-5">
                   <div class="text-center">
                     <h1 class="h4 text-gray-900 mb-4">New student registration</h1>
-                    <h1 class="h4 text-gray-900 mb-4"><b>My school</b></h1>
+                    <h1 class="h4 text-gray-900 mb-4"><b>MTs Assa'adah Cakung</b></h1>
                   </div>
                   <form class="user" action="registrasi_control.php" method="POST">
                     <div class="form-group">

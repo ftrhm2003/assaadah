@@ -1,3 +1,13 @@
+<?php 
+// Menahan output agar tidak mengganggu session_start()
+ob_start(); 
+
+// Pastikan sesi belum dimulai sebelum memulai
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +15,7 @@
 
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My school</title>
+    <title>MTs Assa'adah Cakung</title>
 
     <link rel="stylesheet" href="index.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -23,53 +33,42 @@
 
 </head>
 <body>
-    <section id="topbar" class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-primary text-white topbar-transparent">
+<section id="topbar" class="mb-2 mb-lg-0 mb-sm-0 d-none d-lg-flex align-items-center pt-2 pb-2 bg-primary text-white topbar-transparent">
         <div class="container">
           <div class="row">
             <div class="col-lg-6   text-start">
-             <span class="px-3"><i class="bi bi-phone "></i> +62 134334773 </span>
-          <i class="bi bi-clock"></i> Mon-Sat: 11:00 AM - 23:00 PM
+          <i class="bi bi-clock"></i> Senin - Jumat: 07:00 - 15:00 
             </div>
             <div class="col-md-6 text-end">
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-twitter"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-google"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-linkedin"></i>
-                </a>
-                <a href="" class="me-4 text-reset">
-                    <i class="bi bi-github"></i>
-                </a>
+                <a href="https://www.facebook.com/mts.assaadah.3" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/mtsassaadah?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/@mtsassaadahofficial3446" class="text-white mx-2"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
         </div>
       </section>
-    <nav>
-        <div class="wrapper1">
-        <div class="logo">
-        <img src="assets/assadah.png" alt="Logo Website">
-        </div>
-            <div class="menu">
-                <ul>
-                <li><a href="index.php">BERANDA</a></li>
-                    <li><a href="about.php">TENTANG</a></li>
-                    <li><a href="news_user.php">BERITA</a></li>
-                    <li><a href="agenda.php">AGENDA</a></li>
-                    <li><a href="login.php">REGISTRASI</a></li>
-                    <li><a href="index.php#contact">KONTAK</a></li>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+    <img src="assets/image.png" alt="Logo Website" class="me-2" style="height: 80px;">
+</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.php">BERANDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.php">TENTANG</a></li>
+                    <li class="nav-item"><a class="nav-link" href="news_user.php">BERITA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="agenda.php">AGENDA</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.php">REGISTRASI</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php #contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+    
 <body class="bg-gradient-primary">
 
   <div class="container">
@@ -92,73 +91,91 @@
                     
 
                     <?php 
-                    session_start();
-                    
+                    // Tampilkan pesan registrasi jika ada
                     if(isset($_SESSION['pesan_registrasi'])) { ?>
+                        <div class="alert alert-success">
+                            <?= $_SESSION['pesan_registrasi']; ?>
+                        </div>
+                        <?php unset($_SESSION['pesan_registrasi']); // Hapus setelah ditampilkan 
+                    }
 
-                    <div class="alert alert-success">
-                      <?= $_SESSION['pesan_registrasi'] ?>
-                    </div>
- 
-                    <?php } 
-                    
+                    // Tampilkan pesan error login jika ada
                     if(isset($_SESSION['login_error'])) { ?>
-
-                    <div class="alert alert-danger">
-                      <?= $_SESSION['login_error'] ?>
-                    </div>
-
-                    <?php } 
-                    
-                    session_destroy();
-                    
+                        <div class="alert alert-danger">
+                            <?= $_SESSION['login_error']; ?>
+                        </div>
+                        <?php unset($_SESSION['login_error']); // Hapus setelah ditampilkan 
+                    }
                     ?>
 
-                  </div>
-                  <form class="user" action="login_control.php" method="POST">
-                    <div class="form-group" style="margin-bottom: 20px;">
-                      <input type="text" name="username" class="form-control form-control-user" id="username" placeholder="Enter the username" style="text-align: center;">
+                    <form class="user" action="login_control.php" method="POST">
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="text" name="username" class="form-control form-control-user" id="username" 
+                                placeholder="Enter the username" style="text-align: center;">
+                        </div>
+                        <div class="form-group" style="margin-bottom: 20px;">
+                            <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" 
+                                placeholder="Password" style="text-align: center;">
+                        </div>
+                        <button type="submit" name="btn_login" value="login" class="btn btn-primary btn-user btn-block" 
+                            style="display: block; margin: auto;">
+                            Masuk
+                        </button>
+                    </form>
+
+                    <hr>
+                    <div class="text-center">
+                        <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
                     </div>
-                    <div class="form-group" style="margin-bottom: 20px;">
-                      <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" style="text-align: center;">
-                    </div>
-                    <button type="submit" name="btn_login" value="login" href="" class="btn btn-primary btn-user btn-block" style="display: block; margin: auto;">
-                      Masuk
-                    </button>
-                  </form>
-                  <hr>
-                  <div class="text-center">
-                    <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
-                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
-      </div>
-
-    </div>
-
-  </div>
+        </div>
+        </div>
+        <?php 
+        // Pastikan sesi hanya dihancurkan jika aktif
+        if (session_status() === PHP_SESSION_ACTIVE) {
+            session_destroy();
+        }
+        ?>
     
-  <!-- Bootstrap core JavaScript-->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery (Pastikan di-load lebih dahulu) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-  <!-- Core plugin JavaScript-->
-  <script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Bootstrap JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Custom scripts for all pages-->
-  <script src="assets/js/sb-admin-2.min.js"></script>
+<!-- Core plugin JavaScript -->
+<script src="assets/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-  <footer id="contact">
-            <div class="layar-dalam">
-                <div class="copyright">&copy; 2025 MTs Assa'adah</div>
-            </div>
-        </footer>
-        <script src="java.js"></script>
+<!-- Custom scripts -->
+<script src="assets/js/sb-admin-2.min.js"></script>
+
+<!-- File JavaScript Custom -->
+<script src="java.js"></script>
+
+
+<footer id="contact" style="
+    background: #343a40; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0;">
+    <div class="layar-dalam">
+        <div class="copyright mb-2">&copy; 2025 MTs Assa'adah</div>
+    </div>
+</footer>
+
 
 </body>
 </body>
 </html>
+
+<?php 
+// Mengirim output setelah semua proses selesai
+ob_end_flush(); 
+?>

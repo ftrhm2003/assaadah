@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My school</title>
+    <title>MTs Assa'adah Cakung</title>
 
     <link rel="stylesheet" href="index.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -25,15 +25,9 @@
           <i class="bi bi-clock"></i> Senin - Jumat: 07:00 - 15:00 
             </div>
             <div class="col-md-6 text-end">
-                <a href="https://www.facebook.com/mts.assaadah.3" class="me-4 text-reset">
-                    <i class="bi bi-facebook"></i>
-                </a>
-                <a href="https://www.instagram.com/mtsassaadah?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="me-4 text-reset">
-                    <i class="bi bi-instagram"></i>
-                </a>
-                <a href="https://www.youtube.com/@mtsassaadahofficial3446" class="me-4 text-reset">
-                    <i class="bi bi-youtube"></i>
-                </a>
+                <a href="https://www.facebook.com/mts.assaadah.3" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
+                <a href="https://www.instagram.com/mtsassaadah?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" class="text-white mx-2"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/@mtsassaadahofficial3446" class="text-white mx-2"><i class="bi bi-youtube"></i></a>
             </div>
           </div>
         </div>
@@ -41,7 +35,7 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
         <a class="navbar-brand d-flex align-items-center" href="#">
-    <img src="assets/assadah.png" alt="Logo Website" class="me-2" style="height: 80px;">
+    <img src="assets/image.png" alt="Logo Website" class="me-2" style="height: 80px;">
 </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +48,7 @@
                     <li class="nav-item"><a class="nav-link" href="news_user.php">BERITA</a></li>
                     <li class="nav-item"><a class="nav-link" href="agenda.php">AGENDA</a></li>
                     <li class="nav-item"><a class="nav-link" href="login.php">REGISTRASI</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">KONTAK</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php #contact">KONTAK</a></li>
                 </ul>
             </div>
         </div>
@@ -64,8 +58,8 @@
     <div class="wrapper2">
     <header id="home">
         <div class="overlay">
-        <video autoplay muted loop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
-        <source src="assets/vidio.mp4" type="video/mp4">
+        <video autoplay muted noloop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
+        <source src="assets/0211.mp4" type="video/mp4">
         </video>
             <div id="intro">
                 <h3>MTs Assa’adah</h3>
@@ -114,6 +108,20 @@
 
 
 <style>
+.gallary {
+    padding: 50px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.section__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .gallary__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -124,8 +132,18 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
-  transform: translateX(190px); /* Sesuaikan angka sesuai kebutuhan */
+  transform: translateX(190px); /* Tetap untuk tampilan besar */
 }
+
+/* Ketika layar kecil (misalnya di bawah 768px), pastikan grid di tengah */
+@media (max-width: 768px) {
+  .image__gallary {
+    transform: translateX(0); /* Hilangkan offset pada mobile */
+    justify-content: center;
+    grid-template-columns: repeat(1, 1fr); /* Agar hanya 1 kolom di layar kecil */
+  }
+}
+
 
 .gallary__col {
   display: grid;
@@ -218,6 +236,7 @@ section.quote {
     padding: 100px;
 }
 
+
 section.quote .layar-dalam p {
     display: inline;
     background: url("assets/quote-icon.png") no-repeat;
@@ -258,6 +277,27 @@ section.quote .layar-dalam p {
     text-align: center;
     width: 26%;
 }
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .section__container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gallary__content {
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .image__gallary {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallary__col img {
+        max-width: 90%;
+    }
+}
 </style>
 
    
@@ -266,34 +306,39 @@ section.quote .layar-dalam p {
 include_once 'config/koneksi.php';
 
 // Query to fetch the 3 newest news entries from the "berita" table
-$sql = "SELECT id, title, content, image, date FROM berita ORDER BY date DESC LIMIT 3";
+$sql = "SELECT id, title, content, image, date, created_at FROM berita ORDER BY created_at DESC LIMIT 3";
 $result = $koneksi->query($sql);
 ?>
 
-<section class="content-container">
-    <?php
-    if ($result->num_rows > 0) {
-        while ($row = $result->fetch_assoc()) {
-            echo '<div class="card">';
-            echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="News Image" class="card-img">';
-            echo '<div class="card-body">';
-            echo '<h3>' . htmlspecialchars($row['title']) . '</h3>';
-            echo '<p>' . htmlspecialchars(substr($row['content'], 0, 150)) . '...</p>';
-            echo '</div>';
-            echo '<div class="card-footer">';
-            echo '<p>' . date('F d, Y', strtotime($row['date'])) . '</p>';
-            echo '<a href="news_detail.php?id=' . htmlspecialchars($row['id']) . '" class="font-weight-bold">Baca Selengkapnya</a>';
-            echo '</div>';
-            echo '</div>';
+<section class="container my-5">
+<h1 class="heading"> <span>Portal</span> Berita </h1>
+    <div class="row">
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo '<div class="col-lg-4 col-md-6 col-sm-12 mb-4">'; // Responsive grid
+                echo '<div class="card h-100 shadow-sm">'; // Menambahkan shadow dan ketinggian seragam
+                echo '<img src="data:image/jpeg;base64,' . base64_encode($row['image']) . '" alt="News Image" class="card-img-top">';
+                echo '<div class="card-body">';
+                echo '<h5 class="card-title">' . htmlspecialchars($row['title']) . '</h5>';
+                echo '<p class="card-text">' . htmlspecialchars(substr(strip_tags($row['content']), 0, 150)) . '...</p>';
+                echo '</div>';
+                echo '<div class="card-footer bg-white text-end">';
+                echo '<small class="text-muted pt-4">' . date('F d, Y', strtotime($row['date'])) . '</small><br>';
+                echo '<a href="news_detail.php?id=' . htmlspecialchars($row['id']) . '" class="btn btn-primary btn-sm mt-2 mb-2">Baca Selengkapnya</a>';
+                echo '</div>';
+                echo '</div>';
+                echo '</div>';
+            }
+        } else {
+            echo '<div class="col-12"><p class="text-center">No news available at the moment.</p></div>';
         }
-    } else {
-        echo '<p>No news available at the moment.</p>';
-    }
-    ?>
+        ?>
+    </div>
 </section>
 
+
 <br>
-    
         <section class="contact" id="contact">
 
             <h1 class="heading"> <span>Kontak</span> Kami </h1>
@@ -301,16 +346,26 @@ $result = $koneksi->query($sql);
             <div class="icons-container">
                 <div class="icons">
                     <i class="fas fa-phone"></i>
-                    <h3>Hubungi kami</h3>
-                    <p>Telepon Sekolah: 02122418329</p>
-                    <p>PPDB Center: 085939384646</p>
+                    <h3>Hubungi Kami</h3>
+                    <p>
+                        Telepon Sekolah: 
+                        <a href="tel:02122418329">02122418329</a>
+                    </p>
+                    <p>
+                        PPDB Center: 
+                        <a href="https://wa.me/6285939384646" target="_blank">085939384646</a>
+                    </p>
                 </div>
                 <div class="icons">
                     <i class="fas fa-envelope"></i>
-                    <h3>Email kami</h3>
-                    <p>email: mtsassaadah73@gmail.com </p>
+                    <h3>Email Kami</h3>
+                    <p>
+                        Email: 
+                        <a href="mailto:mtsassaadah73@gmail.com">mtsassaadah73@gmail.com</a>
+                    </p>
                 </div>
             </div>
+
         
             <div class="row">
         

@@ -49,7 +49,17 @@ $koneksi->close();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tambah Berita</title>
-    <script src="../ckeditor/ckeditor.js"></script>
+    <!-- Tambahkan TinyMCE -->
+    <script src="https://cdn.tiny.cloud/1/e9fe0o8fx4kbbldj5ajkbmrl6xpb8n4bl18pnzb18fugi4kt/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: '#content', // Target textarea dengan ID content
+            menubar: false, // Sembunyikan menu bar
+            plugins: 'advlist autolink lists link image charmap preview anchor pagebreak',
+            toolbar: 'undo redo | formatselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+            height: 300
+        });
+    </script>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -148,10 +158,7 @@ $koneksi->close();
 
             <div class="form-group">
                 <label for="content">Content:</label>
-                <textarea id="content" name="content" rows="5" required> </textarea>
-                <script>
-                    CKEDITOR.replace('content');
-                </script>
+                <textarea id="content" name="content" rows="5"></textarea>
             </div>
 
             <div class="form-group">
