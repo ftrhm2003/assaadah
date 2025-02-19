@@ -35,7 +35,7 @@ $result = $koneksi->query($sql);
     body {
         font-family: Arial, sans-serif;
         margin: 0;
-        padding: 20px;
+        padding: 0px;
         background-color: #f4f4f9;
         color: #333;
     }

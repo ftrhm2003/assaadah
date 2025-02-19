@@ -3,10 +3,9 @@
 include('config/koneksi.php');
 session_start();
 
-if(isset($_POST['btn_registrasi'])) {
-    // print_r($_POST);
-
+if (isset($_POST['btn_registrasi'])) {
     $nama = $_POST['nama'];
+    $nisn = $_POST['nisn'];
     $tempat_lahir = $_POST['tempat_lahir'];
     $tanggal_lahir = date("Y-m-d", strtotime($_POST['tanggal_lahir']));
     $jenis_kelamin = $_POST['jenis_kelamin'];
@@ -17,49 +16,53 @@ if(isset($_POST['btn_registrasi'])) {
     $password = md5($_POST['password']);
     $ulangi_password = md5($_POST['ulangi_password']);
 
-    if($password != $ulangi_password) {
+    // Validasi password
+    if ($password != $ulangi_password) {
         echo "Error: Password is not the same";
         echo "<br><br> <button type='button' onclick='history.back();'> Return </button>";
         die;
     }
 
-    // Insert tabel user
-    // $sql_user = "INSERT INTO users () values ('')";
-    $sql_user = "INSERT INTO users (nama, username, password, level) values ('$nama', '$email', '$password', 'siswa')";
+    // Insert ke tabel users
+    $sql_user = "INSERT INTO users (nama, username, password, level) VALUES ('$nama', '$email', '$password', 'siswa')";
     $result_user = mysqli_query($koneksi, $sql_user);
 
-    if($result_user){
-        $data_user = mysqli_query($koneksi, "SELECT LAST_INSERT_ID()");
-        while($u = mysqli_fetch_array($data_user)){
-            $id_user = $u[0];
-        }
+    if ($result_user) {
+        // Ambil ID terakhir dari tabel users
+        $id_user = mysqli_insert_id($koneksi);
 
-        // insert table pendaftar
-        $sql_pendaftar = "INSERT INTO pendaftar (nama, tmpt_lahir, tgl_lahir, jenis_kelamin, agama, alamat, email, telepon, users_id) values ('$nama', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$agama', '$alamat', '$email', '$telepon', '$id_user')";
+        // Insert ke tabel pendaftar
+        $sql_pendaftar = "INSERT INTO pendaftar (nama, nisn, tmpt_lahir, tgl_lahir, jenis_kelamin, agama, alamat, email, telepon, users_id) 
+                          values ('$nama', '$nisn', '$tempat_lahir', '$tanggal_lahir', '$jenis_kelamin', '$agama', '$alamat', '$email', '$telepon', '$id_user')";
 
         $result_pendaftar = mysqli_query($koneksi, $sql_pendaftar);
 
-        if($result_pendaftar){
-            // jika berhasil
-            $_SESSION['pesan_registrasi'] = "SUCCESSFUL registration, Login using your email and password!";
+        if ($result_pendaftar) {
+            // Ambil ID terakhir dari pendaftar
+            $pendaftar_id = mysqli_insert_id($koneksi);
 
-            header('location:login.php');
+            // Insert ke tabel berkas dengan pendaftar_id dan users_id
+            $sql_berkas = "INSERT INTO berkas (pendaftar_id, users_id) VALUES ('$pendaftar_id', '$id_user')";
+            $result_berkas = mysqli_query($koneksi, $sql_berkas);
 
+            if ($result_berkas) {
+                $_SESSION['pesan_registrasi'] = "SUCCESSFUL registration, Login using your email and password!";
+                header('location:login.php');
+            } else {
+                echo "Error insert berkas: " . mysqli_error($koneksi);
+                echo "<br><br> <button type='button' onclick='history.back();'> Return </button>";
+                die;
+            }
         } else {
-            // jika query pendaftar gagal
-            echo "Error insert pendaftar ". mysqli_error($koneksi);
+            echo "Error insert pendaftar: " . mysqli_error($koneksi);
             echo "<br><br> <button type='button' onclick='history.back();'> Return </button>";
             die;
         }
-
-
     } else {
-        // jika query users gagal
-        echo "Error insert users: ". mysqli_error($koneksi);
+        echo "Error insert users: " . mysqli_error($koneksi);
         echo "<br><br> <button type='button' onclick='history.back();'> Return </button>";
         die;
     }
-
 } else {
     header('location:registrasi.php');
 }

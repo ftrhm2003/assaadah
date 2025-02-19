@@ -8,7 +8,11 @@ if(isset($_POST['btn_login'])) {
     $username = $_POST['username'];
     $password = md5($_POST['password']);
 
-    $sql_user = "SELECT * FROM users where username = '$username' and password = '$password'";
+    $sql_user = "SELECT users.id, users.nama, users.level, pendaftar.id as pendaftar_id 
+             FROM users 
+             LEFT JOIN pendaftar ON users.id = pendaftar.users_id
+             WHERE users.username = '$username' AND users.password = '$password'";
+
     $result_user = mysqli_query($koneksi, $sql_user);
 
     if(mysqli_num_rows($result_user) > 0) {
@@ -18,6 +22,10 @@ if(isset($_POST['btn_login'])) {
             $_SESSION['id_users'] = $data_user['id'];
             $_SESSION['nama'] = $data_user['nama'];
             $_SESSION['level'] = $data_user['level'];
+            $_SESSION['pendaftar_inside_id'] = $data_user['pendaftar_id']; 
+
+
+
 
             if($data_user['level'] == 'admin') {
                 header('location:admin/dashboard.php');

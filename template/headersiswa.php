@@ -18,16 +18,55 @@
 
   <!-- Custom styles for this template-->
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
 
   <!-- css datepicker -->
   <link href="../assets/vendor/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="syle_hdsiswa.css">
   <style>
-    .logo-login {
-        max-height: 160px;
-        margin-bottom: 20px;
+  @media (max-width: 768px) {
+  body {
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Hide the sidebar initially */
+    height: 100%;
+    width: 250px; /* Set your desired width */
+    z-index: 1000; /* Ensure it's above the main content */
+    transition: left 0.5s; /* Smooth transition for showing/hiding the sidebar */
+  }
+
+  .sidebar.show {
+    left: 0; /* Show the sidebar */
+  }
+
+  .main-content {
+    padding: 0px;
+  }
+  }
+</style>
+
+<script>
+  // Toggle sidebar on mobile
+  function toggleSidebar() {
+    var sidebar = document.getElementById('accordionSidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Prevent the sidebar from closing immediately on mobile
+  document.addEventListener('touchstart', function(event) {
+    var sidebar = document.getElementById('accordionSidebar');
+    var isClickInside = sidebar.contains(event.target);
+
+    if (!isClickInside) {
+      sidebar.classList.remove('show');
     }
-  </style>
+  });
+</script>
 
 </head>
 
@@ -40,12 +79,10 @@
     <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
       <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="assets/img/swd.png">
-        <div class="sidebar-brand-icon rotate-n-15">
-          <i class="fas fa-laugh-wink"></i>
-        </div>
-        <div class="sidebar-brand-text mx-3">Register</div>
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
+        <img src="../assets/LOGO_MTS.png" alt="Logo MTS" class="logo-sidebar" style="max-height: 50px;">
       </a>
+
 
 
       <?php if($_SESSION['level'] == 'siswa') { ?>
@@ -149,7 +186,7 @@
 
       <!-- Sidebar Toggler (Sidebar) -->
       <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+        <button onclick="toggleSidebar()" class="rounded-circle border-0" id="sidebarToggle"></button>
       </div>
 
     </ul>
@@ -165,9 +202,11 @@
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
           <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none bg-white ">
+            <i class="bi bi-justify" style="font-size: 1.5rem; margin-right: 0px;"></i>
             <i class="fa fa-bars"></i>
           </button>
+
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
@@ -210,3 +249,28 @@
 
         </nav>
         <!-- End of Topbar -->
+
+<script>
+  // Toggle sidebar on mobile
+  function toggleSidebar() {
+    var sidebar = document.getElementById('accordionSidebar');
+    sidebar.classList.toggle('show');
+  }
+
+  // Add event listener to the toggle button
+  document.getElementById("sidebarToggleTop").addEventListener("click", function () {
+    toggleSidebar();
+  });
+
+  // Prevent the sidebar from closing immediately on mobile
+  document.addEventListener('touchstart', function(event) {
+    var sidebar = document.getElementById('accordionSidebar');
+    var isClickInside = sidebar.contains(event.target) || event.target.closest("#sidebarToggleTop");
+
+    if (!isClickInside) {
+      sidebar.classList.remove('show');
+    }
+  });
+</script>
+
+

@@ -1,27 +1,24 @@
 <?php
 
-// tabel pendaftar
-$all_pendaftar = mysqli_query($koneksi, "SELECT * FROM pendaftar, nilai WHERE pendaftar.id = nilai.pendaftar_id AND nilai.status = 0");
+// Koneksi ke database
+$koneksi = new mysqli('localhost', 'root', '', 'pendaftaran');
 
-// cek hasil
-if(!$all_pendaftar) {
-    die('Query Error : '. mysqli_error($koneksi));
+// Cek koneksi
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
 }
 
-// jml pendaftar
-$jml_pendaftar = mysqli_query($koneksi, "SELECT * FROM pendaftar, nilai WHERE pendaftar.id = nilai.pendaftar_id");
+// Ambil semua pendaftar dengan status baru (0)
+$all_pendaftar = mysqli_query($koneksi, "SELECT pendaftar.*, 
+                                                berkas.kartu_keluarga, 
+                                                berkas.ktp, 
+                                                berkas.ijazah, 
+                                                berkas.akte_kelahiran, 
+                                                berkas.buku_kjp 
+                                          FROM pendaftar 
+                                          LEFT JOIN berkas ON pendaftar.id = berkas.pendaftar_id 
+                                          WHERE pendaftar.status = 0");
 
-// cek hasil
-if(!$jml_pendaftar) {
-    die('Query Error : '. mysqli_error($koneksi));
+if (!$all_pendaftar) {
+    die('Query Error: ' . mysqli_error($koneksi));
 }
-
-// jml LOLOS
-$jml_lolos = mysqli_query($koneksi, "SELECT * FROM pendaftar, nilai WHERE pendaftar.id = nilai.pendaftar_id AND nilai.status = 1");
-
-// cek hasil
-if(!$jml_lolos) {
-    die('Query Error : '. mysqli_error($koneksi));
-}
-
-?>

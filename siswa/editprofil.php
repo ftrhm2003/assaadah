@@ -4,6 +4,7 @@
 
 <?php include('../template/headersiswa.php'); ?>
 
+
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
@@ -16,6 +17,10 @@
                 <div class="form-group">
                     <label for="nama">Name</label>
                     <input type="text" class="form-control" id="nama" placeholder="Enter name" name="nama" value="<?= $data_pendaftar['nama'] ?>">
+                </div>
+                <div class="form-group">
+                    <label for="nama">NISN</label>
+                    <input type="text" class="form-control" id="nisn" placeholder="Enter NISN" name="nisn" value="<?= $data_pendaftar['nisn'] ?>">
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
@@ -94,6 +99,12 @@
                 
                 
             </div>
+
+            
+
+
+
+
             <div class="col-md-4">
                 <?php
                 if(isset($data_pendaftar['foto']) && $data_pendaftar['foto'] != '') {
@@ -112,6 +123,71 @@
             </div>
         </div>
     </form>
+
+<style>
+    .form-container {
+        max-width: flex;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #f9f9f9;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+
+    input[type="file"] {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 15px;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .btn-primary {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-danger {
+        padding: 10px 20px;
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .btn-danger:hover {
+        background-color: #c82333;
+    }
+</style>
+
 
   
 </div>

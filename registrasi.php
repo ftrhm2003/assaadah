@@ -56,6 +56,10 @@
                         <label for="nama">Name</label>
                         <input type="text" class="form-control" id="nama" placeholder="Enter name" name="nama">
                     </div>
+                    <div class="form-group">
+                        <label for="nama">NISN</label>
+                        <input type="text" class="form-control" id="nisn" placeholder="Enter NISN" name="nisn">
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-6">
                             <label for="tempat_lahir">Place of birth</label>
