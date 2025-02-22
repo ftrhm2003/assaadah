@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   
 
-  <title>Registration of Student Registration Applications</title>
+  <title>Pendaftaran Aplikasi Registrasi Siswa</title>
 
 
  
@@ -48,7 +48,7 @@
               <div class="col-md-12">
                 <div class="p-5">
                   <div class="text-center">
-                    <h1 class="h4 text-gray-900 mb-4">New student registration</h1>
+                    <h1 class="h4 text-gray-900 mb-4">Pendaftaran akun siswa baru</h1>
                     <h1 class="h4 text-gray-900 mb-4"><b>MTs Assa'adah Cakung</b></h1>
                   </div>
                   <form class="user" action="registrasi_control.php" method="POST">
@@ -62,34 +62,34 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label for="tempat_lahir">Place of birth</label>
+                            <label for="tempat_lahir">Tempat lahir</label>
                             <input type="text" class="form-control" id="tempat_lahir" placeholder="Place of birth" name="tempat_lahir">
                         </div>
                         <div class="col-md-6">
-                            <label for="tanggal_lahir">Date of birth</label>
+                            <label for="tanggal_lahir">Tanggal lahir</label>
                             <input type="text" class="form-control datepicker" id="tanggal_lahir" placeholder="Date of birth"  name="tanggal_lahir">
                         </div>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-6">
-                            <label>Gender</label>
+                            <label>Jenis kelamin</label>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="jenis_kelamin" id="lk" value="L">
                                 <label class="form-check-label" for="lk">
-                                    Male
+                                    Laki-laki
                                 </label>
                             </div>
                             <div class="form-check">
                                 <input class="form-check-input" type="radio" name="jenis_kelamin" id="pr" value="P">
                                 <label class="form-check-label" for="pr">
-                                    Female
+                                    Perempuan
                                 </label>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <label for="agama">Religion</label>
+                            <label for="agama">Agama</label>
                             <select name="agama" id="agama" class="form-control">
-                                <option value="">Choose a religion</option>
+                                <option value="">Pilih agama</option>
                                 <option value="islam">Islam</option>
                                 <option value="kristen">Kristen</option>
                                 <option value="katolik">Katolik</option>
@@ -99,7 +99,7 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="alamat">Address</label>
+                        <label for="alamat">Alamat</label>
                         <textarea name="alamat" id="alamat" class="form-control"></textarea>
                     </div>
                     <div class="form-group row">
@@ -108,7 +108,7 @@
                             <input name="email" type="email" class="form-control" id="email" placeholder="Email">
                         </div>
                         <div class="col-md-6">
-                            <label for="telepon">Telephone</label>
+                            <label for="telepon">Telepon</label>
                             <input name="telepon" type="text" class="form-control" id="telepon" placeholder="Telephone">
                         </div>
                     </div>
@@ -118,18 +118,18 @@
                             <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <div class="col-md-6">
-                            <label for="ulangi_password">Repeat the password</label>
+                            <label for="ulangi_password">Ulangi password</label>
                             <input name="ulangi_password" type="password" class="form-control" id="ulangi_password" placeholder="Repeat the password">
                         </div>
                     </div>
 
                     <button name="btn_registrasi" value="simpan" class="btn btn-primary btn-user btn-block">
-                      Registration
+                      Daftarkan
                     </button>
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="login.php">Already have an account?Login!</a>
+                    <a class="small" href="login.php">Apakamu sudah memiliki akun?Login!</a>
                   </div>
                 </div>
               </div>

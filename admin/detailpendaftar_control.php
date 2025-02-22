@@ -11,24 +11,24 @@ if(!$result_pendaftar) {
     die('Query Error : '. mysqli_error($koneksi));
 }
 
-$sql_nilai = "SELECT * FROM nilai where pendaftar_id = '$id_pendaftar'";
-$result_nilai = mysqli_query($koneksi, $sql_nilai);
-$data_nilai = mysqli_fetch_array($result_nilai);
+$sql_pendaftarinside = "SELECT * FROM pendaftarinside where pendaftar_inside_id = '$id_pendaftar'";
+$result_pendaftarinside = mysqli_query($koneksi, $sql_pendaftarinside);
+$data_pendaftarinside = mysqli_fetch_array($result_pendaftarinside);
 
 // cek hasil
-if(!$result_nilai) {
+if(!$result_pendaftarinside) {
     die('Query Error : '. mysqli_error($koneksi));
 }
 
-// ubah status nilai
-if(isset($_POST['simpan']) && $_POST['simpan'] == 'simpan_nilai') {
+// ubah status 
+if(isset($_POST['simpan']) && $_POST['simpan'] == 'simpan_pendaftarinside') {
 
-    $nilai = $_POST['nilai'];
+    $pendaftarinside = $_POST['pendaftarinside'];
 
-    $sql_nilai = " UPDATE nilai set status='$nilai' where pendaftar_id='$id_pendaftar'";
-    $query_nilai = mysqli_query($koneksi,$sql_nilai);
+    $sql_pendaftarinside = " UPDATE pendaftarinside set status='$pendaftarinside' where pendaftar_inside_id='$id_pendaftar'";
+    $query_pendaftarinside = mysqli_query($koneksi,$sql_pendaftarinside);
 
-    if($query_nilai) {
+    if($query_pendaftarinside) {
         // berhasil
         $_SESSION['pesan_sukses'] = "The status of the registrant was successfully changed";
         header('location:pendaftaran.php');

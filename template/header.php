@@ -57,7 +57,7 @@
               <span>Dashboard</span></a>
           </li>
 
-          <!-- Divider -->
+          <!-- Divider 
           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
@@ -65,7 +65,8 @@
               <i class="fas fa-fw fa-list"></i>
               <span>Nilai</span></a>
           </li>
-
+          -->
+          
           <!-- Divider -->
           <hr class="sidebar-divider my-0">
 
@@ -73,6 +74,24 @@
             <a class="nav-link" href="editprofil.php">
               <i class="fas fa-fw fa-user"></i>
               <span>Edit profile</span></a>
+          </li>
+
+           <!-- Divider -->
+           <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="registrasi_inside.php">
+              <i class="fas fa-fw fa-user"></i>
+              <span>Lengakapi pendaftaran</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="regist_berkas.php">
+              <i class="fas fa-fw fa-user"></i>
+              <span>Lengakapi Berkas</span></a>
           </li>
 
           <!-- Divider -->
@@ -101,7 +120,7 @@
           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="pendaftaran.php">
+            <a class="nav-link" href="regis_data.php">
               <i class="fas fa-fw fa-list"></i>
               <span>Data Registrasi</span></a>
           </li>
