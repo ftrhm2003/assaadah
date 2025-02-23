@@ -3,9 +3,12 @@
 <?php include('dashboard_control.php'); ?>
 
 <?php include('../template/headersiswa.php'); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 <!-- Begin Page Content -->
 <div class="container-fluid">
+
+<h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
 
 <!-- Warning Alert -->
 <?php if(isset($data_pendaftar['is_verified']) && $data_pendaftar['is_verified'] == 0) { ?>
@@ -19,9 +22,6 @@
     </div>
   <?php } ?>
 
-  <!-- Page Heading -->
-  <!-- Page Heading -->
-<h1 class="h3 mb-4 text-gray-800">Dashboard</h1>
 
 <!-- Row utama yang sudah ada -->
 <div class="row">
@@ -36,24 +36,83 @@
     </div>
 </div>
 
-<!-- Row untuk menyusun Re-registration requirements dan PERSONAL DATA sejajar -->
-<div class="row">
-    <!-- Re-registration requirements (Kiri) -->
-    <div class="col-md-6">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">PENGUMUMAN PENDAFTARAN</h6>
-            </div>
-            <div class="card-body">
-                <p>Untuk para pendaftar silahkan baca langkah-langkah pendaftaran dibawah ini</p>
-                <a href="../assets/langkah pendaftaran.pdf" target="_blank">Buka PDF</a>
 
-                <p class="text-danger mt-3">* Pengumuman pendaftaran: mm-dd-yyyy</p>
+<?php
+$file = '../hasil_seleksi.json';
+
+// Jika file tidak ada, buat file kosong
+if (!file_exists($file)) {
+    file_put_contents($file, json_encode([]));
+}
+
+// Ambil data seleksi
+$seleksi = json_decode(file_get_contents($file), true);
+
+// Cek apakah ada pengumuman
+$status = $seleksi['status'] ?? null;
+?>
+<div class="col-md-12">
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">PENGUMUMAN HASIL PENDAFTARAN</h6>
+        </div>
+        <div class="card-body">
+            <div class="card text-center">
+                <div class="card-body">
+                    
+                        <?php if ($status === null): ?>
+                        <h5 class="card-title mb-3">Belum ada pengumuman</h5>
+                        <div class="col-auto">
+                            <i class="fas fa-spinner text-warning mb-3" style="font-size: 90px;"></i>
+                        </div>
+                        <p class="card-text">Terima kasih telah mendaftar di MTs Assa'adah</p>
+                        <p class="text-danger mt-3">* Pengumuman pendaftaran: mm-dd-yyyy</p>
+                        
+                        <?php elseif ($status == 1): ?>
+                        <h5 class="card-title mb-3">KAMU LOLOS</h5>
+                        <div class="col-auto">
+                            <i class="far fa-check-circle text-success mb-3" style="font-size: 90px;"></i>
+                        </div>
+                        <p class="card-text">Selamat datang di MTs Assa'adah</p>
+                        <p class="card-text">Silahkan bergabung ke dalam grup whatsapp berikut:</p>
+                        <p class="card-text">link</p>
+                        
+                        <?php elseif ($status == 2): ?>
+                        <h5 class="card-title mb-3">Pendafataran sedang di proses</h5>
+                        <div class="col-auto">
+                            <i class="fa fa-clock text-danger mb-3" style="font-size: 90px;"></i>
+                        </div>
+                        <p class="card-text">Terima kasih telah mendaftar di MTs Assa'adah</p>
+                    <?php endif; ?>
+
+                </div>
+                <div class="card-footer text-muted">
+                    <marquee style="margin-bottom: -5px;">MTs Assa'adah</marquee>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <!-- PERSONAL DATA (Kanan) -->
+<!-- menyusun Re-registration requirements dan PERSONAL DATA sejajar -->
+<div class="row">
+    <!-- Re-registration requirements -->
+    <div class="col-md-6">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">LANGKAH MENDAFTAR</h6>
+            </div>
+            <div class="card-body">
+                <p>Untuk para pendaftar silahkan baca langkah-langkah pendaftaran dibawah ini</p>
+                <a href="../assets/langkah pendaftaran.pdf" target="_blank">--Buka PDF--</a>
+
+                
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- PERSONAL DATA-->
     <div class="col-md-6">
         <div class="card shadow mb-4">
             <div class="card-header py-3">
@@ -117,6 +176,7 @@
             </div>
         </div>
     </div>
+
 </div>
 
   

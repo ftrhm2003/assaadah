@@ -56,10 +56,8 @@
             $status = '<span class="badge badge-info">New</span>';
 
           } else if ($p['status'] == 1) {
-            $status = '<span class="badge badge-success">Passed</span>';
+            $status = '<span class="badge badge-success">Checked</span>';
 
-          } else if ($p['status'] == 2) {
-            $status = '<span class="badge badge-danger">Not qualify</span>';
           }
 
           ?>

@@ -90,14 +90,9 @@
             } else if($data_pendaftarinside['status'] == 1) {
               echo '
               <div class="alert alert-info">
-                  Registrant data is stated <b>PASSED</b>
+                  Registrant data is stated <b>Checked</b>
               </div>';
-            } else if($data_pendaftarinside['status'] == 2) {
-              echo '
-              <div class="alert alert-danger">
-                  Registrant data is stated <b>NOT QUALIFY</b>
-              </div>';
-            }
+            } 
             ?>
             
             <ul class="list-group">
@@ -282,11 +277,10 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                          <label for="nilai">Evaluate</label>
-                          <select name="nilai" id="nilai" class="form-control" required>
+                          <label for="pendaftarinside">Evaluate</label>
+                          <select name="pendaftarinside" id="pendaftarinside" class="form-control" required>
                             <option value="">--Choose--</option>
-                            <option value="1">Passed</option>
-                            <option value="2">Not qualify</option>
+                            <option value="1">Checked</option>
                           </select>
                         </div>
                         <div class="modal-footer">
@@ -301,7 +295,7 @@
         </div>
       </div>
 
-      <a href="pendaftaran.php" class="btn btn-danger">Kembali</a>
+      <a href="regis_data.php" class="btn btn-danger">Kembali</a>
     </div>
     
   </div>

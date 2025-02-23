@@ -3,6 +3,7 @@
 <?php include('editprofil_control.php'); ?>
 
 <?php include('../template/headersiswa.php'); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 <!-- Begin Page Content -->

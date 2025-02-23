@@ -31,7 +31,7 @@ if(isset($_POST['simpan']) && $_POST['simpan'] == 'simpan_pendaftarinside') {
     if($query_pendaftarinside) {
         // berhasil
         $_SESSION['pesan_sukses'] = "The status of the registrant was successfully changed";
-        header('location:pendaftaran.php');
+        header('location:regis_data.php');
     } else {
         echo "Failed to update the registrant status"; die;
     }

@@ -160,8 +160,18 @@
           <li class="nav-item">
             <a class="nav-link" href="regis_data.php">
               <i class="fas fa-fw fa-list"></i>
-              <span>Registration data</span></a>
+              <span>Data Pendaftaran</span></a>
           </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="berkas_data.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Berkas Data</span></a>
+          </li>
+
 
           <!-- Divider -->
           <hr class="sidebar-divider my-0">
