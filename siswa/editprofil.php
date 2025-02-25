@@ -3,6 +3,7 @@
 <?php include('editprofil_control.php'); ?>
 
 <?php include('../template/headersiswa.php'); ?>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
 
 <!-- Begin Page Content -->
@@ -15,7 +16,7 @@
             <div class="col-md-8">
                 
                 <div class="form-group">
-                    <label for="nama">Name</label>
+                    <label for="nama">Nama</label>
                     <input type="text" class="form-control" id="nama" placeholder="Enter name" name="nama" value="<?= $data_pendaftar['nama'] ?>">
                 </div>
                 <div class="form-group">
@@ -24,17 +25,17 @@
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label for="tempat_lahir">Place of birth</label>
+                        <label for="tempat_lahir">Temapat lahir</label>
                         <input type="text" class="form-control" id="tempat_lahir" placeholder="Place of birth" name="tempat_lahir" value="<?= $data_pendaftar['tmpt_lahir'] ?>">
                     </div>
                     <div class="col-md-6">
-                        <label for="tanggal_lahir">Date of birth</label>
+                        <label for="tanggal_lahir">Tanggal lahir</label>
                         <input type="text" class="form-control datepicker" id="tanggal_lahir" placeholder="Date of birth" name="tanggal_lahir" value="<?= date("d-m-Y", strtotime($data_pendaftar['tgl_lahir'])); ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <div class="col-md-6">
-                        <label>Gender</label>
+                        <label>Jenis kelamin</label>
                         <?php
                         $laki = "";
                         $perempuan = "";
@@ -49,20 +50,20 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="jenis_kelamin" id="lk" value="L" <?= $laki ?>>
                             <label class="form-check-label" for="lk">
-                                Male
+                                Laki-laki
                             </label>
                         </div>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="jenis_kelamin" id="pr" value="P" <?= $perempuan ?>>
                             <label class="form-check-label" for="pr">
-                                Female
+                                Perempuan
                             </label>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <label for="agama">Religion</label>
+                        <label for="agama">Agama</label>
                         <select name="agama" id="agama" class="form-control">
-                            <option value="">Choose a religion</option>
+                            <option value="">Pilih agama</option>
                             <option value="islam" <?php if($data_pendaftar['agama'] == 'islam'){ echo "selected"; } ?>>Islam</option>
                             <option value="kristen" <?php if($data_pendaftar['agama'] == 'kristen'){ echo "selected"; } ?>>Kristen</option>
                             <option value="katolik" <?php if($data_pendaftar['agama'] == 'katolik'){ echo "selected"; } ?>>Katolik</option>
@@ -72,7 +73,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="alamat">Address</label>
+                    <label for="alamat">Alamat</label>
                     <textarea name="alamat" id="alamat" class="form-control"><?= $data_pendaftar['alamat']; ?></textarea>
                 </div>
                 <div class="form-group row">
@@ -81,7 +82,7 @@
                         <input name="email" type="email" class="form-control" id="email" placeholder="Email" value="<?= $data_pendaftar['email'] ?>">
                     </div>
                     <div class="col-md-6">
-                        <label for="telepon">Telephone</label>
+                        <label for="telepon">Telepon</label>
                         <input name="telepon" type="text" class="form-control" id="telepon" placeholder="Telephone" value="<?= $data_pendaftar['telepon'] ?>">
                     </div>
                 </div>
@@ -118,8 +119,8 @@
                 <input type="file" name="gambar" class="form-control mt-2">
             </div>
             <div class="col-md-12">
-                <button type="submit" name="btn_simpan" value="simpan_profil" class="btn btn-primary mb-5">Change</button>
-                <a href="dashboard.php" class="btn btn-danger mb-5">Return</a>
+                <button type="submit" name="btn_simpan" value="simpan_profil" class="btn btn-primary mb-5">Ubah</button>
+                <a href="dashboard.php" class="btn btn-danger mb-5">Kembali</a>
             </div>
         </div>
     </form>

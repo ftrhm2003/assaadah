@@ -6,13 +6,13 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Registrant details</h1>
+  <h1 class="h3 mb-4 text-gray-800">DETAIL PENDAFTAR</h1>
   
   <div class="row">
     <div class="col-md-6">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">PERSONAL DATA</h6>
+          <h6 class="m-0 font-weight-bold text-primary">DATA DIRI</h6>
         </div>
         <div class="card-body">
           <div class="card-body">
@@ -31,28 +31,32 @@
               <?= $data_pendaftar['nama'] ?>
             </h5>
             <ul class="list-group">
+            <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">NISN</h6>
+                <small class="text-muted"><?= $data_pendaftar['nisn'] ?></small>
+              </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Place and date of birth</h6>
+                <h6 class="mb-0" style="color: black;">Tempat, tanggal lahir</h6>
                 <small class="text-muted"><?= $data_pendaftar['tmpt_lahir'] ?>, <?= date("d-m-Y", strtotime($data_pendaftar['tgl_lahir'])); ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Gender</h6>
+                <h6 class="mb-0" style="color: black;">Jenis kelamin</h6>
                 <?php 
                 if($data_pendaftar['jenis_kelamin'] == 'L') {
-                  $kelamin = "Male";
+                  $kelamin = "Laki-laki";
                 } else {
-                  $kelamin = "Female";
+                  $kelamin = "Perempuan";
                 }
                 ?>
 
                 <small class="text-muted"><?= $kelamin ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Religion</h6>
-                <small class="text-muted">Islam</small>
+                <h6 class="mb-0" style="color: black;">Agama</h6>
+                <small class="text-muted"><?= $data_pendaftar['agama'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Address</h6>
+                <h6 class="mb-0" style="color: black;">Alamat</h6>
                 <small class="text-muted"><?= $data_pendaftar['alamat'] ?></small>
               </li>
               <li class="list-group-item">
@@ -60,7 +64,7 @@
                 <small class="text-muted"><?= $data_pendaftar['email'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Telephone</h6>
+                <h6 class="mb-0" style="color: black;">Telepon</h6>
                 <small class="text-muted"><?= $data_pendaftar['telepon'] ?></small>
               </li>
             </ul>
@@ -72,56 +76,190 @@
     <div class="col-md-6">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
-          <h6 class="m-0 font-weight-bold text-primary">Registrar's Value Data</h6>
+          <h6 class="m-0 font-weight-bold text-primary">DATA PENDAFTAR SEKOLAH</h6>
         </div>
         <div class="card-body">
           <div class="card-body">
 
             <?php 
-            if($data_nilai['status'] == 0) {
+            if($data_pendaftarinside['status'] == 0) {
               echo '
               <div class="alert alert-warning">
                   Registrant data has not been validated
               </div>';
-            } else if($data_nilai['status'] == 1) {
+            } else if($data_pendaftarinside['status'] == 1) {
               echo '
               <div class="alert alert-info">
-                  Registrant data is stated <b>PASSED</b>
+                  Registrant data is stated <b>Checked</b>
               </div>';
-            } else if($data_nilai['status'] == 2) {
-              echo '
-              <div class="alert alert-danger">
-                  Registrant data is stated <b>NOT QUALIFY</b>
-              </div>';
-            }
+            } 
             ?>
             
             <ul class="list-group">
+            <h6 class="m-0 font-weight-bold text-dark">Data Siswa</h6>
+            <br>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Semester score 1</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_semester1'] ?></small>
+                <h6 class="mb-0" style="color: black;">No KK</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nokk'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Semester score 2</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_semester2'] ?></small>
+                <h6 class="mb-0" style="color: black;">NIK </h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nik'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Semester score 3</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_semester3'] ?></small>
+                <h6 class="mb-0" style="color: black;">Anak ke</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['anakke'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Semester score 4</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_semester4'] ?></small>
+                <h6 class="mb-0" style="color: black;">Jumlah Saudara Kandung</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['jmlsaudara'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Semester score 5</h6>
-                <small class="text-muted"><?= $data_nilai['nilai_semester5'] ?></small>
+                <h6 class="mb-0" style="color: black;">Hobi</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['hobi'] ?></small>
               </li>
               <li class="list-group-item">
-                <h6 class="mb-0" style="color: black;">Avarage score</h6>
-                <small class="text-muted"><?= number_format(($data_nilai['nilai_semester5'] + $data_nilai['nilai_semester4'] + $data_nilai['nilai_semester3'] + $data_nilai['nilai_semester2'] + $data_nilai['nilai_semester1']) / 5, 2) ?></small>
+                <h6 class="mb-0" style="color: black;">Cita-cita</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['citacita'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Prasekolah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['prasekolah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">IMUNISASI</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['imunisasi'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Nama Sekolah Asal</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['sekolahasal'] ?></small>
+              </li>
+              </ul>
+              <br>
+              <ul class="list-group">
+              <h6 class="m-0 font-weight-bold text-dark">Data Orang Tua</h6>
+              <br>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Nama Ayah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nama_ayah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">NIK Ayah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nik_ayah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Pendidikan Terakhir Ayah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['pendidikan_ayah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">No Telepon Ayah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nohp_ayah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Pekerjaan Ayah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['pekerjaan_ayah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Penghasilan Ayah</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['penghasilan_ayah'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Nama Ibu</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nama_ibu'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">NIK Ibu</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nik_ibu'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Pendidikan Terakhir Ibu</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['pendidikan_ibu'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">No Telepon Ibu</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['nohp_ibu'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Pekerjaan Ibu</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['pekerjaan_ibu'] ?></small>
+              </li>
+              <li class="list-group-item">
+                <h6 class="mb-0" style="color: black;">Penghasilan Ibu</h6>
+                <small class="text-muted"><?= $data_pendaftarinside['penghasilan_ibu'] ?></small>
               </li>
             </ul>
+
+            <br>
+            <?php if (!empty($data_pendaftarinside['nama_wali']) || !empty($data_pendaftarinside['nik_wali']) || !empty($data_pendaftarinside['pendidikan_wali']) || !empty($data_pendaftarinside['nohp_wali']) || !empty($data_pendaftarinside['pekerjaan_wali']) || !empty($data_pendaftarinside['penghasilan_wali']) || !empty($data_pendaftarinside['hubungan_wali'])): ?>
+              <ul class="list-group">
+                <h6 class="m-0 font-weight-bold text-dark">Data Wali</h6>
+            <br>
+                <?php if (!empty($data_pendaftarinside['nama_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">Nama Wali</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['nama_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['nik_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">NIK Wali</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['nik_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['pendidikan_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">Pendidikan Terakhir Wali</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['pendidikan_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['nohp_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">No Telepon Wali</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['nohp_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['pekerjaan_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">Pekerjaan Wali</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['pekerjaan_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['penghasilan_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">Penghasilan Wali</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['penghasilan_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['hubungan_wali'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">Hubungan dengan Siswa</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['hubungan_wali'] ?></small>
+                  </li>
+                <?php endif; ?>
+              </ul>
+            <?php endif; ?>
+
+
+            <br>
+            <?php if (!empty($data_pendaftarinside['rek_kjp']) || !empty($data_pendaftarinside['rek_pip'])): ?>
+              <ul class="list-group">
+                <h6 class="m-0 font-weight-bold text-dark">Data Bantuan Pemerintah</h6>
+            <br>
+                <?php if (!empty($data_pendaftarinside['rek_kjp'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">No Rekening KJP</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['rek_kjp'] ?></small>
+                  </li>
+                <?php endif; ?>
+                <?php if (!empty($data_pendaftarinside['rek_pip'])): ?>
+                  <li class="list-group-item">
+                    <h6 class="mb-0" style="color: black;">No Rekening PIP</h6>
+                    <small class="text-muted"><?= $data_pendaftarinside['rek_pip'] ?></small>
+                  </li>
+                <?php endif; ?>
+              </ul>
+            <?php endif; ?>
+
 
             <button type="button" class="btn btn-primary mt-3 btn-block" data-toggle="modal" data-target="#modalvalidasi">
                 Validation of registrant data
@@ -139,11 +277,10 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                          <label for="nilai">Evaluate</label>
-                          <select name="nilai" id="nilai" class="form-control" required>
+                          <label for="pendaftarinside">Evaluate</label>
+                          <select name="pendaftarinside" id="pendaftarinside" class="form-control" required>
                             <option value="">--Choose--</option>
-                            <option value="1">Passed</option>
-                            <option value="2">Not qualify</option>
+                            <option value="1">Checked</option>
                           </select>
                         </div>
                         <div class="modal-footer">
@@ -158,7 +295,7 @@
         </div>
       </div>
 
-      <a href="pendaftaran.php" class="btn btn-danger">Return</a>
+      <a href="regis_data.php" class="btn btn-danger">Kembali</a>
     </div>
     
   </div>

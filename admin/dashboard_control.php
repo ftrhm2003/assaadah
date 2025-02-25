@@ -1,24 +1,27 @@
 <?php
 
-// Koneksi ke database
-$koneksi = new mysqli('localhost', 'root', '', 'pendaftaran');
+// tabel pendaftar
+$all_pendaftar = mysqli_query($koneksi, "SELECT * FROM pendaftar, pendaftarinside WHERE pendaftar.id = pendaftarinside.pendaftar_inside_id AND pendaftarinside.status = 0");
 
-// Cek koneksi
-if ($koneksi->connect_error) {
-    die("Koneksi gagal: " . $koneksi->connect_error);
+// cek hasil
+if(!$all_pendaftar) {
+    die('Query Error : '. mysqli_error($koneksi));
 }
 
-// Ambil semua pendaftar dengan status baru (0)
-$all_pendaftar = mysqli_query($koneksi, "SELECT pendaftar.*, 
-                                                berkas.kartu_keluarga, 
-                                                berkas.ktp, 
-                                                berkas.ijazah, 
-                                                berkas.akte_kelahiran, 
-                                                berkas.buku_kjp 
-                                          FROM pendaftar 
-                                          LEFT JOIN berkas ON pendaftar.id = berkas.pendaftar_id 
-                                          WHERE pendaftar.status = 0");
+// jml pendaftar
+$jml_pendaftar = mysqli_query($koneksi, "SELECT * FROM pendaftar, pendaftarinside WHERE pendaftar.id = pendaftarinside.pendaftar_inside_id");
 
-if (!$all_pendaftar) {
-    die('Query Error: ' . mysqli_error($koneksi));
+// cek hasil
+if(!$jml_pendaftar) {
+    die('Query Error : '. mysqli_error($koneksi));
 }
+
+// jml LOLOS
+$jml_lolos = mysqli_query($koneksi, "SELECT * FROM pendaftar, pendaftarinside WHERE pendaftar.id = pendaftarinside.pendaftar_inside_id AND pendaftarinside.status = 1");
+
+// cek hasil
+if(!$jml_lolos) {
+    die('Query Error : '. mysqli_error($koneksi));
+}
+
+?>

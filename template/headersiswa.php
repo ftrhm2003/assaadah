@@ -94,7 +94,7 @@
               <span>Dashboard</span></a>
           </li>
 
-          <!-- Divider -->
+          <!-- Divider
           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
@@ -102,6 +102,7 @@
               <i class="fas fa-fw fa-list"></i>
               <span>Grades</span></a>
           </li>
+          -->
 
           <!-- Divider -->
           <hr class="sidebar-divider my-0">
@@ -125,10 +126,29 @@
           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
+            <a class="nav-link" href="registrasi_inside.php">
+              <i class="fas fa-fw fa-user"></i>
+              <span>Lengakapi pendaftaran</span></a>
+          </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="regist_berkas.php">
+              <i class="fas fa-fw fa-user"></i>
+              <span>Lengakapi Berkas</span></a>
+          </li>
+
+          <!-- Divider
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
             <a class="nav-link" href="addpayment.php">
               <i class="fas fa-fw fa-user"></i>
               <span>Payment</span></a>
           </li>
+          -->
 
       <?php } ?>
 
@@ -147,10 +167,20 @@
           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="pendaftaran.php">
+            <a class="nav-link" href="regis_data.php">
               <i class="fas fa-fw fa-list"></i>
-              <span>Registration data</span></a>
+              <span>Data Pendaftaran</span></a>
           </li>
+
+          <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="berkas_data.php">
+              <i class="fas fa-fw fa-list"></i>
+              <span>Berkas Data</span></a>
+          </li>
+
 
           <!-- Divider -->
           <hr class="sidebar-divider my-0">
