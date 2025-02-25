@@ -1,38 +1,24 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+include('../config/auto_load.php');  // Memanggil session_start() dari auto_load.php
+include('paymentcontrol.php');  // Mengikutkan logika pembayaran
 
-<head>
+include('../template/headersiswa.php');  // Menyertakan header template
+?>
 
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
+<!-- Begin Page Content -->
+<div class="container-fluid">
 
-  <title>Registration of Student Registration Applications</title>
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Registrasi data siswa</h1>
 
+    <!-- Alert Notification -->
+    <?php if (isset($_SESSION['pesan_sukses'])) { ?>
+        <div class="alert alert-success">
+            <?= $_SESSION['pesan_sukses']; ?>
+        </div>
+        <?php unset($_SESSION['pesan_sukses']); ?>
+    <?php } ?>
 
- 
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
-  <!-- Custom styles for this template-->
-  <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
-
-  <!-- css datepicker -->
-  <link href="../assets/vendor/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
-
-  <style>
-    .logo-login {
-        max-height: 160px;
-        margin-bottom: 20px;
-    }
-  </style>
-
-</head>
-
-<body class="bg-gradient-primary">
 
   <div class="container">
 
@@ -52,6 +38,8 @@
                     <h1 class="h4 text-gray-900 mb-4"><b>MTs Assa'adah Cakung</b></h1>
                   </div>
                   <form class="user" action="registrasi_inside_control.php" method="POST">
+                  <h6 class="m-0 font-weight-bold text-primary">Data siswa :</h6>
+                  <br>
                     <div class="form-group">
                         <label for="nokk">Nomor KK</label>
                         <input type="text" class="form-control" id="nokk" placeholder="Enter KK Number" name="nokk">
@@ -76,7 +64,10 @@
                         <label for="citacita">Cita Cita</label>
                         <input type="text" class="form-control" id="citacita" placeholder="Enter cita cita" name="citacita">
                     </div>
-                
+                    <div class="form-group">
+                        <label for="sekolahasal">Sekolah Asal</label>
+                        <input name="sekolahasal" type="text" class="form-control" id="sekolahasal" placeholder="Sekolah Asal">
+                    </div>
                     <div class="form-group row">
                         <div class="col-md-6">
                             <label>Pra Sekolah</label>
@@ -116,12 +107,289 @@
                             </div>
                         </div>
                     </div>
-                    <div class="form-group row">
-                        <div class="col-md-6">
-                            <label for="sekolahasal">Sekolah Asal</label>
-                            <input name="sekolahasal" type="text" class="form-control" id="sekolahasal" placeholder="Sekolah Asal">
+                   
+                    <div class="form-group">
+                        <label for="sekolahasal">Sekolah Asal</label>
+                        <input name="sekolahasal" type="text" class="form-control" id="sekolahasal" placeholder="Sekolah Asal">
                     </div>
 
+                    <br>
+
+                    <h6 class="m-0 font-weight-bold text-primary">Data orang tua/wali:</h6>
+                    <div class="form-group">
+                        <label for="nama_ayah">Nama Ayah</label>
+                        <input type="text" class="form-control" id="nama_ayah" placeholder="isi nama ayah" name="nama_ayah">
+                    </div>
+                    <div class="form-group">
+                        <label for="nik_ayah">NIK Ayah</label>
+                        <input type="text" class="form-control" id="nik_ayah" placeholder="isi nik ayah" name="nik_ayah">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Pendidikan terakhir Ayah</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="sd" value="1">
+                                <label class="form-check-label" for="sd">
+                                    SD
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="smp" value="2">
+                                <label class="form-check-label" for="smp">
+                                    SMP
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="sma" value="3">
+                                <label class="form-check-label" for="sma">
+                                    SMA
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="d3" value="4">
+                                <label class="form-check-label" for="d3">
+                                    D3
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="s1" value="5">
+                                <label class="form-check-label" for="s1">
+                                    S1
+                                </label>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="nohp_ayah">No Telepon Ayah</label>
+                        <input type="text" class="form-control" id="nohp_ayah" placeholder="isi no telepon ayah" name="nohp_ayah">
+                    </div>
+                    <div class="form-group">
+                        <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                        <input type="text" class="form-control" id="pekerjaan_ayah" placeholder="isi pekerjaan ayah" name="pekerjaan_ayah">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Penghasilan Ayah</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji1" value="1">
+                                <label class="form-check-label" for="gaji1">
+                                    Kurang dari 500.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji2" value="2">
+                                <label class="form-check-label" for="gaji2">
+                                    500.000 - 1000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji3" value="3">
+                                <label class="form-check-label" for="gaji3">
+                                    1000.000 - 2000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji4" value="4">
+                                <label class="form-check-label" for="gaji4">
+                                    2000.000 - 3000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji5" value="5">
+                                <label class="form-check-label" for="gaji5">
+                                    3000.000 - 5000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji6" value="6">
+                                <label class="form-check-label" for="gaji6">
+                                    Tidak ada penghasilan
+                                </label>
+                            </div>
+                        </div>
+                        
+                    <div class="form-group">
+                        <label for="nama_ibu">Nama Ibu</label>
+                        <input type="text" class="form-control" id="nama_ibu" placeholder="isi nama ibu" name="nama_ibu">
+                    </div>
+                    <div class="form-group">
+                        <label for="nik_ibu">NIK Ibu</label>
+                        <input type="text" class="form-control" id="nik_ibu" placeholder="isi nik ibu" name="nik_ibu">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Pendidikan terakhir Ibu</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ibu" id="sd" value="1">
+                                <label class="form-check-label" for="sd">
+                                    SD
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ibu" id="smp" value="2">
+                                <label class="form-check-label" for="smp">
+                                    SMP
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ibu" id="sma" value="3">
+                                <label class="form-check-label" for="sma">
+                                    SMA
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ibu" id="d3" value="4">
+                                <label class="form-check-label" for="d3">
+                                    D3
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ibu" id="s1" value="5">
+                                <label class="form-check-label" for="s1">
+                                    S1
+                                </label>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="nohp_ibu">No Telepon Ibu</label>
+                        <input type="text" class="form-control" id="nohp_ibu" placeholder="isi no telepon ibu" name="nohp_ibu">
+                    </div>
+                    <div class="form-group">
+                        <label for="pekerjaan_ibu">Pekerjaan Ibu</label>
+                        <input type="text" class="form-control" id="pekerjaan_ibu" placeholder="isi pekerjaan ibu" name="pekerjaan_ibu">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Penghasilan Ibu</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ibu" id="gaji1" value="1">
+                                <label class="form-check-label" for="gaji1">
+                                    Kurang dari 500.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ibu" id="gaji2" value="2">
+                                <label class="form-check-label" for="gaji2">
+                                    500.000 - 1000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ibu" id="gaji3" value="3">
+                                <label class="form-check-label" for="gaji3">
+                                    1000.000 - 2000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ibu" id="gaji4" value="4">
+                                <label class="form-check-label" for="gaji4">
+                                    2000.000 - 3000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ibu" id="gaji5" value="5">
+                                <label class="form-check-label" for="gaji5">
+                                    3000.000 - 5000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ibu" id="gaji6" value="6">
+                                <label class="form-check-label" for="gaji6">
+                                    Tidak ada penghasilan
+                                </label>
+                            </div>
+                        </div>
+                        
+                    <div class="form-group">
+                        <label for="nama_ayah">Nama Ayah</label>
+                        <input type="text" class="form-control" id="nama_ayah" placeholder="isi nama ayah" name="nama_ayah">
+                    </div>
+                    <div class="form-group">
+                        <label for="nik_ayah">NIK Ayah</label>
+                        <input type="text" class="form-control" id="nik_ayah" placeholder="isi NIK ayah" name="nik_ayah">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Pendidikan terakhir Ayah</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="sd" value="1">
+                                <label class="form-check-label" for="sd">
+                                    SD
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="smp" value="2">
+                                <label class="form-check-label" for="smp">
+                                    SMP
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="sma" value="3">
+                                <label class="form-check-label" for="sma">
+                                    SMA
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="d3" value="4">
+                                <label class="form-check-label" for="d3">
+                                    D3
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="pendidikan_ayah" id="s1" value="5">
+                                <label class="form-check-label" for="s1">
+                                    S1
+                                </label>
+                            </div>
+                        </div>
+                    <div class="form-group">
+                        <label for="nohp_ayah">No Telepon Ayah</label>
+                        <input type="text" class="form-control" id="nohp_ayah" placeholder="isi no telepon ayah" name="nohp_ayah">
+                    </div>
+                    <div class="form-group">
+                        <label for="pekerjaan_ayah">Pekerjaan Ayah</label>
+                        <input type="text" class="form-control" id="pekerjaan_ayah" placeholder="isi pekerjaan ayah" name="pekerjaan_ayah">
+                    </div>
+                    <div class="form-group row">
+                        <div class="col-md-6">
+                            <label>Penghasilan Ayah</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji1" value="1">
+                                <label class="form-check-label" for="gaji1">
+                                    Kurang dari 500.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji2" value="2">
+                                <label class="form-check-label" for="gaji2">
+                                    500.000 - 1000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji3" value="3">
+                                <label class="form-check-label" for="gaji3">
+                                    1000.000 - 2000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji4" value="4">
+                                <label class="form-check-label" for="gaji4">
+                                    2000.000 - 3000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji5" value="5">
+                                <label class="form-check-label" for="gaji5">
+                                    3000.000 - 5000.000
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="penghasilan_ayah" id="gaji6" value="6">
+                                <label class="form-check-label" for="gaji6">
+                                    Tidak ada penghasilan
+                                </label>
+                            </div>
+                        </div>
+                   
+                   
                     <button name="btn_registrasi" value="simpan" class="btn btn-primary btn-user btn-block">
                       Simpan data
                     </button>
@@ -162,6 +430,7 @@
     });
   </script>
 
-</body>
+</div>
+<!-- /.container-fluid -->
 
-</html>
+<?php include('../template/footer.php'); ?>

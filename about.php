@@ -14,6 +14,11 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="http://www.w3.org/2000/svg">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+   
+</svg>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <style>
@@ -194,12 +199,17 @@
         </div>
       </div>
       
-   
+   <br>
 <!-- VISI dan MISI Sections -->
 <div class="row features">
     <div class="feature">
         <div class="feature-content">
-            <h3><i class='bx bxs-right-top-arrow-circle'></i> VISI</h3>
+            <h3><i class='bx bx-analyse'></i> VISI</h3>
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+            </ul>
+            <br>
+            <h3><i class='bx bxs-right-top-arrow-circle'></i> MISI</h3>
             <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -213,7 +223,7 @@
     
     <div class="feature">
         <div class="feature-content">
-            <h3><i class='bx bx-analyse'></i> MISI</h3>
+            <h3><i class="bi bi-crosshair"></i> TUJUAN</h3>
             <ul>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
@@ -221,6 +231,10 @@
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
                 <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <br>
+                <br>
+                <br>
+                <br>
             </ul>
         </div>
     </div>

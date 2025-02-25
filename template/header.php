@@ -76,6 +76,15 @@
           </li>
 
           <!-- Divider -->
+          <hr class="sidebar-divider my-0">
+
+          <li class="nav-item">
+            <a class="nav-link" href="registrasi_inside.php">
+              <i class="fas fa-fw fa-user"></i>
+              <span>Lengkapi data</span></a>
+          </li>
+
+          <!-- Divider -->
           <!-- <hr class="sidebar-divider my-0">
 
           <li class="nav-item">

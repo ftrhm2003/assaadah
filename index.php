@@ -58,7 +58,7 @@
     <div class="wrapper2">
     <header id="home">
         <div class="overlay">
-        <video autoplay muted noloop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
+        <video autoplay muted loop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
         <source src="assets/0211.mp4" type="video/mp4">
         </video>
             <div id="intro">
