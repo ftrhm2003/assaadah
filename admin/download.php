@@ -3,7 +3,7 @@
 $host = 'localhost';
 $username = 'root';
 $password = '';
-$database = 'pendaftaran'; // Sesuaikan dengan nama database kamu
+$database = 'pendaftaran';
 
 $conn = new mysqli($host, $username, $password, $database);
 
@@ -27,26 +27,30 @@ $sql = "SELECT $type FROM berkas WHERE pendaftar_id = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $pendaftar_id);
 $stmt->execute();
-$stmt->bind_result($file_content);
-$stmt->fetch();
-$stmt->close();
+$stmt->store_result();
 
-// Pastikan berkas ditemukan
-if (!empty($file_content)) {
-    // Tentukan nama file default
+if ($stmt->num_rows > 0) {
+    $stmt->bind_result($file_content);
+    $stmt->fetch();
+    
+    // Nama file
     $file_name = "{$type}_{$pendaftar_id}.pdf";
 
-    // Set header untuk download file PDF
+    // Set header untuk download
     header('Content-Type: application/pdf');
-    header("Content-Disposition: attachment; filename=\"$file_name\"");
+    header("Content-Disposition: inline; filename=\"$file_name\"");
     header("Content-Length: " . strlen($file_content));
+    header('Cache-Control: public, must-revalidate, max-age=0');
+    header('Pragma: public');
+    header('Expires: 0');
 
-    // Tampilkan isi file
+    // Output file content dengan `echo` langsung
     echo $file_content;
 } else {
     echo "Berkas tidak ditemukan.";
 }
 
 // Tutup koneksi
+$stmt->close();
 $conn->close();
 ?>

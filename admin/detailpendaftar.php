@@ -71,13 +71,66 @@
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      <div class="col-md-6">
+      <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">BERKAS PENDAFTAR SEKOLAH</h6>
+        </div>
+            <div class="card-body">
+                <ul class="list-group mb-3">
+                    <li class="list-group-item">
+                        <h6 class="mb-0" style="color: black;">Nama</h6>
+                        <small class="text-muted"> <?= htmlspecialchars($data_pendaftar['nama']) ?> </small>
+                    </li>
+                    <li class="list-group-item">
+                        <h6 class="mb-0" style="color: black;">Alamat</h6>
+                        <small class="text-muted"> <?= htmlspecialchars($data_pendaftar['alamat']) ?> </small>
+                    </li>
 
+                    <?php
+                    $dokumen = [
+                        'kartu_keluarga' => 'Kartu Keluarga',
+                        'ktp' => 'KTP',
+                        'ijazah' => 'Ijazah',
+                        'akte_kelahiran' => 'Akte Kelahiran',
+                        'buku_kjp' => 'Buku KJP'
+                    ];
+
+                    foreach ($dokumen as $key => $label) {
+                        if (!empty($data_berkas[$key])) {
+                            $file_url = "download.php?pendaftar_id=" . urlencode($id_pendaftar) . "&type=" . urlencode($key);
+                    ?>
+                            <li class="list-group-item">
+                                <h6 class="mb-0" style="color: black;"><?= htmlspecialchars($label) ?></h6>
+                                <small class="text-muted">
+                                    ✅ <a href="<?= htmlspecialchars($file_url) ?>" target="_blank">Download</a>
+                                </small>
+                                <br>
+                                <iframe src="<?= htmlspecialchars($file_url) ?>" width="100%" height="400px"></iframe>
+                            </li>
+                    <?php
+                        } else {
+                    ?>
+                            <li class="list-group-item">
+                                <h6 class="mb-0" style="color: black;"><?= htmlspecialchars($label) ?></h6>
+                                <small class="text-muted">❌</small>
+                            </li>
+                    <?php
+                        }
+                    }
+                    ?>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
     <div class="col-md-6">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">DATA PENDAFTAR SEKOLAH</h6>
         </div>
+        <div class="row-3">
         <div class="card-body">
           <div class="card-body">
 
@@ -260,7 +313,6 @@
               </ul>
             <?php endif; ?>
 
-
             <button type="button" class="btn btn-primary mt-3 btn-block" data-toggle="modal" data-target="#modalvalidasi">
                 Validation of registrant data
             </button>
@@ -294,7 +346,6 @@
           </div>
         </div>
       </div>
-
       <a href="regis_data.php" class="btn btn-danger">Kembali</a>
     </div>
     
