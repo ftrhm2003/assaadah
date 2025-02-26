@@ -5,7 +5,9 @@ if (!$koneksi) {
 }
 
 // Ambil data semua pendaftar
-$all_pendaftar = mysqli_query($koneksi, "SELECT pendaftar.*, pendaftarinside.nama_ayah, pendaftarinside.nama_ibu FROM pendaftar, pendaftarinside WHERE pendaftar.id = pendaftarinside.pendaftar_inside_id");
+$all_pendaftar = mysqli_query($koneksi, "SELECT pendaftar.*, pendaftarinside.nama_ayah, pendaftarinside.nama_ibu, pendaftarinside.status FROM pendaftar 
+JOIN pendaftarinside ON pendaftar.id = pendaftarinside.pendaftar_inside_id");
+
 
 if (!$all_pendaftar) {
     die('Query Error: ' . mysqli_error($koneksi));

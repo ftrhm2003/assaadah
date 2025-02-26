@@ -48,6 +48,7 @@
           <td><?= $p['telepon'] ?></td>
           <td><?= $p['nama_ayah'] ?></td>
           <td><?= $p['nama_ibu'] ?></td>
+   
          
           
           <?php

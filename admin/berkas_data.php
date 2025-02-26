@@ -24,28 +24,34 @@
           </tr>
         </thead>
         <tbody>
-          <?php if (!empty($all_pendaftar)) { 
-            
-            foreach ($all_pendaftar as $index => $p) { ?>
-              <tr>
-                <td><?= $index + 1 ?></td>
-                <td><?= htmlspecialchars($p['nama']) ?></td>
-                <td><?= htmlspecialchars($p['alamat']) ?></td>
-                <td><?= $p['kartu_keluarga'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=kartu_keluarga'>✅</a>" : "❌" ?></td>
-                <td><?= $p['ktp'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=ktp'>✅</a>" : "❌" ?></td>
-                <td><?= $p['ijazah'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=ijazah'>✅</a>" : "❌" ?></td>
-                <td><?= $p['akte_kelahiran'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=akte_kelahiran'>✅</a>" : "❌" ?></td>
-                <td><?= $p['buku_kjp'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=buku_kjp'>✅</a>" : "❌" ?></td>
-                <td><span class="badge badge-info">New</span></td>
-                <td><a href="download_all.php?pendaftar_id=<?= $p['id'] ?>&nama=<?= urlencode($p['nama']) ?>" class="btn btn-primary">Download Semua</a></td>
-              </tr>
-          <?php }
-          } else { ?>
+        <?php if (!empty($all_pendaftar)) { 
+          foreach ($all_pendaftar as $index => $p) { ?>
             <tr>
-              <td colspan="9" align="center"><b>There are no new registrants</b></td>
+              <td><?= $index + 1 ?></td>
+              <td><?= htmlspecialchars($p['nama']) ?></td>
+              <td><?= htmlspecialchars($p['alamat']) ?></td>
+              <td><?= $p['kartu_keluarga'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=kartu_keluarga'>✅</a>" : "❌" ?></td>
+              <td><?= $p['ktp'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=ktp'>✅</a>" : "❌" ?></td>
+              <td><?= $p['ijazah'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=ijazah'>✅</a>" : "❌" ?></td>
+              <td><?= $p['akte_kelahiran'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=akte_kelahiran'>✅</a>" : "❌" ?></td>
+              <td><?= $p['buku_kjp'] ? "<a href='download.php?pendaftar_id={$p['id']}&type=buku_kjp'>✅</a>" : "❌" ?></td>
+              <?php
+              if($p['status_pendaftarinside'] == 1) {
+                  $status = '<span class="badge badge-success">Checked</span>';
+              } else {
+                  $status = '<span class="badge badge-info">New</span>';
+              }
+              ?>
+              <td><?= $status ?></td>
+              <td><a href="download_all.php?pendaftar_id=<?= $p['id'] ?>&nama=<?= urlencode($p['nama']) ?>" class="btn btn-primary">Download Semua</a></td>
             </tr>
-          <?php } ?>
-        </tbody>
+        <?php }
+        } else { ?>
+          <tr>
+            <td colspan="9" align="center"><b>There are no new registrants</b></td>
+          </tr>
+        <?php } ?>
+      </tbody>
       </table>
     </div>
   </div>

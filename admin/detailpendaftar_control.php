@@ -36,15 +36,16 @@ if (!$result_berkas) {
     die('Query Error: ' . mysqli_error($koneksi));
 }
 
-// Ubah status
-if (isset($_POST['simpan']) && $_POST['simpan'] == 'simpan_pendaftarinside') {
-    $pendaftarinside = $_POST['pendaftarinside'];
-    $sql_pendaftarinside = "UPDATE pendaftarinside SET status='$pendaftarinside' WHERE pendaftar_inside_id='$id_pendaftar'";
-    $query_pendaftarinside = mysqli_query($koneksi, $sql_pendaftarinside);
+// Ubah status ketika tombol Store ditekan
+if (isset($_POST['simpan']) && $_POST['simpan'] == 'simpan_nilai') {
+    $pendaftarinside = 1; // Set status langsung ke 1
+    $sql_update = "UPDATE pendaftarinside SET status='$pendaftarinside' WHERE pendaftar_inside_id='$id_pendaftar'";
+    $query_update = mysqli_query($koneksi, $sql_update);
 
-    if ($query_pendaftarinside) {
+    if ($query_update) {
         $_SESSION['pesan_sukses'] = "The status of the registrant was successfully changed";
         header('location:regis_data.php');
+        exit();
     } else {
         echo "Failed to update the registrant status";
         die;

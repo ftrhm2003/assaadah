@@ -120,7 +120,7 @@
                         }
                     }
                     ?>
-                    
+                    <td><a href="download_all.php?pendaftar_id=<?= $data_pendaftar['id'] ?>&nama=<?= urlencode($data_pendaftar['nama']) ?>" class="btn btn-primary">Download Semua</a></td>
                 </ul>
             </div>
         </div>

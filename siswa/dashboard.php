@@ -72,7 +72,7 @@ $status = $seleksi['status'] ?? null;
                         </div>
                         <p class="card-text">Selamat datang di MTs Assa'adah</p>
                         <p class="card-text">Silahkan bergabung ke dalam grup whatsapp berikut:</p>
-                        <p class="card-text">link</p>
+                        <p class="card-text" href="">link</p>
                         
                         <?php elseif ($status == 2): ?>
                         <h5 class="card-title mb-3">Pendafataran sedang di proses</h5>
