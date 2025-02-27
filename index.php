@@ -193,7 +193,7 @@
     margin: auto;
 }
 
-.gallary_content .section_subtitle {
+.gallary__content .section__subtitle {
     margin-bottom: 2rem;
 }
 

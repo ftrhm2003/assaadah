@@ -9,7 +9,7 @@
 <div class="container-fluid">
 
   <!-- Page Heading -->
-  <h1 class="h3 mb-4 text-gray-800">Students data</h1>
+  <h1 class="h3 mb-4 text-gray-800">Data Pendaftar</h1>
   
   <div class="row">
     <div class="col-12">
@@ -48,6 +48,7 @@
           <td><?= $p['telepon'] ?></td>
           <td><?= $p['nama_ayah'] ?></td>
           <td><?= $p['nama_ibu'] ?></td>
+   
          
           
           <?php
@@ -64,7 +65,7 @@
           <td><?= $status ?></td>
           <td>
             <a href="detailpendaftar.php?id=<?= $p['id'] ?>" class="btn btn-primary btn-sm mb-1">Review</a>
-              <a href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalHapus_<?= $p['id'] ?>">Delete</a>
+            <a href="" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#modalHapus_<?= $p['id'] ?>">Delete</a>
           </td>
         </tr>
 
@@ -84,7 +85,7 @@
                     <b> Data will be deleted permanently.<b></p>
                   </div>
                   <div class="modal-footer">
-                      <a href="<?= $base_url ?>/admin/pendaftaran.php?action=hapus&id=<?= $p['id'] ?>" class="btn btn-danger">Delete</a>
+                      <a href="<?= $base_url ?>/admin/regis_data.php?action=hapus&id=<?= $p['id'] ?>" class="btn btn-danger">Delete</a>
                       <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                   </div>
                 </div>

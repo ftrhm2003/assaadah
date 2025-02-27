@@ -113,13 +113,13 @@
               <span>Edit profile</span></a>
           </li>
 
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
+           <!-- Divider -->
+           <hr class="sidebar-divider my-0">
 
           <li class="nav-item">
-            <a class="nav-link" href="registrasi_inside.php">
-              <i class="fas fa-fw fa-user"></i>
-              <span>Lengakapi pendaftaran</span></a>
+          <a class="nav-link" href="registrasi_inside.php">
+              <i class="fas fa-edit"></i>
+              <span>Lengkapi data</span></a>
           </li>
 
           <!-- Divider -->
@@ -127,7 +127,7 @@
 
           <li class="nav-item">
             <a class="nav-link" href="regist_berkas.php">
-              <i class="fas fa-fw fa-user"></i>
+              <i class="fas fa-upload"></i>
               <span>Lengakapi Berkas</span></a>
           </li>
 

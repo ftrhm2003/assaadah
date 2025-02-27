@@ -62,11 +62,8 @@ $status = $seleksi['status'] ?? null;
                     
                         <?php if ($status === null): ?>
                         <h5 class="card-title mb-3">Belum ada pengumuman</h5>
-                        <div class="col-auto">
-                            <i class="fas fa-spinner text-warning mb-3" style="font-size: 90px;"></i>
-                        </div>
                         <p class="card-text">Terima kasih telah mendaftar di MTs Assa'adah</p>
-                        <p class="text-danger mt-3">* Pengumuman pendaftaran: mm-dd-yyyy</p>
+                        <p class="text-danger mt-3">* Pengumuman hasil pendaftaran: mm-dd-yyyy</p>
                         
                         <?php elseif ($status == 1): ?>
                         <h5 class="card-title mb-3">KAMU LOLOS</h5>
@@ -75,7 +72,7 @@ $status = $seleksi['status'] ?? null;
                         </div>
                         <p class="card-text">Selamat datang di MTs Assa'adah</p>
                         <p class="card-text">Silahkan bergabung ke dalam grup whatsapp berikut:</p>
-                        <p class="card-text">link</p>
+                        <p class="card-text" href="">link</p>
                         
                         <?php elseif ($status == 2): ?>
                         <h5 class="card-title mb-3">Pendafataran sedang di proses</h5>
@@ -83,6 +80,7 @@ $status = $seleksi['status'] ?? null;
                             <i class="fa fa-clock text-danger mb-3" style="font-size: 90px;"></i>
                         </div>
                         <p class="card-text">Terima kasih telah mendaftar di MTs Assa'adah</p>
+                        <p class="text-danger mt-3">* Pengumuman hasil pendaftaran: mm-dd-yyyy</p>
                     <?php endif; ?>
 
                 </div>
