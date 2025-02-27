@@ -165,7 +165,9 @@
                 <div class="content">
                     <h3 class="title">Apa itu <span>MTs Assa'adah?</span></h3>
                     <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    MTs Assa'adah Cakung adalah Madrasah Tsanawiyah swasta yang berlokasi di Jl. Tambun Rengas Rt 003/Rw 007, Cakung Timur, Kecamatan Cakung, Kota Jakarta Timur, DKI Jakarta. 
+            Sekolah ini didirikan pada tanggal 26 Juli 2009 berdasarkan SK Pendirian Kd.09.02/PP.00/6736/2009 dan mulai beroperasi pada 21 Januari 2016 dengan SK Operasional 379 Tahun 2016. 
+            MTs Assa'adah berada di bawah naungan Kementerian Agama dan telah terakreditasi A dengan nilai 92 berdasarkan SK Akreditasi 1347/BAN-SM/SK/2021 yang diterbitkan pada 9 Desember 2021.
 
                     </p>
                 </div>

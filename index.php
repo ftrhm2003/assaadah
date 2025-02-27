@@ -58,7 +58,7 @@
     <div class="wrapper2">
     <header id="home">
         <div class="overlay">
-        <video autoplay muted noloop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
+        <video autoplay muted loop style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; object-fit: cover; z-index: -1;">
         <source src="assets/0211.mp4" type="video/mp4">
         </video>
             <div id="intro">
@@ -108,6 +108,22 @@
 
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
+
+:root {
+    --primary-color: #3685fb;
+    --primary-color-dark: #2f73d9;
+    --secondary-color: #fafcff;
+    --extra-light: #ffffff;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* GALLARY SECTION */
 .gallary {
     padding: 50px 20px;
     background-color: #f8f9fa;
@@ -115,6 +131,9 @@
 }
 
 .section__container {
+    max-width: 1200px; /* Agar lebih lebar di layar besar */
+    margin: auto;
+    padding: 5rem 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -122,108 +141,90 @@
     gap: 20px;
 }
 
+/* Gallary Container */
 .gallary__container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    align-items: center;
 }
 
 .image__gallary {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  transform: translateX(190px); /* Tetap untuk tampilan besar */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    justify-content: center; /* Agar tetap di tengah */
 }
 
-/* Ketika layar kecil (misalnya di bawah 768px), pastikan grid di tengah */
+/* Responsif untuk layar kecil */
 @media (max-width: 768px) {
-  .image__gallary {
-    transform: translateX(0); /* Hilangkan offset pada mobile */
-    justify-content: center;
-    grid-template-columns: repeat(1, 1fr); /* Agar hanya 1 kolom di layar kecil */
-  }
-}
+    .gallary__container {
+        grid-template-columns: 1fr;
+    }
 
+    .image__gallary {
+        grid-template-columns: 1fr;
+        justify-content: center;
+    }
+}
 
 .gallary__col {
-  display: grid;
-  place-content: center;
-  gap: 1rem;
+    display: grid;
+    place-content: center;
+    gap: 1rem;
 }
 
 .gallary__col img {
-  width: 100%;  /* Atur ukuran sesuai keinginan, misal 70% dari ukuran aslinya */
-  height: auto; /* Menjaga aspek rasio gambar */
-  border-radius: 1rem;
-  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
-  display: block; /* Menghindari space tambahan */
-  margin: auto; /* Agar gambar tetap berada di tengah */
-  
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: auto;
 }
 
-
+/* Gallary Content */
 .gallary__content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  text-align: justify;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify;
+    max-width: 600px;
+    margin: auto;
 }
 
-.gallary__content > div {
-  max-width: 400px;
+.gallary_content .section_subtitle {
+    margin-bottom: 2rem;
 }
 
-.gallary__content .section__subtitle {
-  margin-bottom: 2rem;
+/* RESPONSIVE IMAGE */
+@media (max-width: 600px) {
+    .gallary__container {
+        grid-template-columns: 1fr;
+    }
+
+    .gallary__col img {
+        max-width: 90%;
+    }
 }
 
-@media (width < 600px) {
-
-  .gallary__container {
-    grid-template-columns: repeat(1, 1fr);
-  }
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap");
-
-:root {
-  --primary-color: #3685fb;
-  --primary-color-dark: #2f73d9;
-  --secondary-color: #fafcff;
-  
-  --extra-light: #ffffff;
-
-}
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-.section__container {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 5rem 1rem;
-}
-
+/* BUTTON */
 .btn {
-  padding: 0.75rem 2rem;
-  outline: none;
-  border: none;
-  font-size: 1rem;
-  color: var(--extra-light);
-  background-color: var(--primary-color);
-  border-radius: 5rem;
-  cursor: pointer;
-  transition: 0.3s;
+    padding: 0.75rem 2rem;
+    border: none;
+    font-size: 1rem;
+    color: white;
+    background-color: var(--primary-color);
+    border-radius: 5rem;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 .btn:hover {
-  background-color: var(--primary-color-dark);
+    background-color: var(--primary-color-dark);
 }
 
+/* QUOTE SECTION */
 section.quote {
     background: url("assets/alam.jpg") no-repeat;
     background-attachment: fixed;
@@ -236,48 +237,30 @@ section.quote {
     padding: 100px;
 }
 
-
 section.quote .layar-dalam p {
     display: inline;
     background: url("assets/quote-icon.png") no-repeat;
     padding: 40px;
 }
 
-.tim img {
+/* TEAM SECTION */
+.tim, .support {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.tim img, .support img {
     width: 100%;
-    box-shadow: 0px -10px 30px #ccc;
     border-radius: 5px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 
-.support,
-.tim {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.support h6,
-.tim h6 {
-    margin: 0px;
-    margin-top: 20px;
-    padding: 0px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.support img {
-    width: 50px;
-}
-
-.support div,
-.tim div {
+.support div, .tim div {
     text-align: center;
     width: 26%;
 }
-/* RESPONSIVE */
+
+/* RESPONSIVE TEAM SECTION */
 @media (max-width: 768px) {
     .section__container {
         flex-direction: column;
@@ -289,17 +272,21 @@ section.quote .layar-dalam p {
         max-width: 100%;
     }
 
-    .image__gallary {
+    .gallary__col img {
+        max-width: 90%;
+    }
+
+    .tim, .support {
         flex-direction: column;
         align-items: center;
     }
 
-    .gallary__col img {
-        max-width: 90%;
+    .support div, .tim div {
+        width: 90%;
     }
 }
-</style>
 
+</style>
    
 
 <?php
