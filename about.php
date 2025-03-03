@@ -170,10 +170,10 @@
                 <div class="content">
                     <h3 class="title">Apa itu <span>MTs Assa'adah?</span></h3>
                     <p class="description">
-                    MTs Assa'adah Cakung adalah Madrasah Tsanawiyah swasta yang berlokasi di Jl. Tambun Rengas Rt 003/Rw 007, Cakung Timur, Kecamatan Cakung, Kota Jakarta Timur, DKI Jakarta. 
-            Sekolah ini didirikan pada tanggal 26 Juli 2009 berdasarkan SK Pendirian Kd.09.02/PP.00/6736/2009 dan mulai beroperasi pada 21 Januari 2016 dengan SK Operasional 379 Tahun 2016. 
-            MTs Assa'adah berada di bawah naungan Kementerian Agama dan telah terakreditasi A dengan nilai 92 berdasarkan SK Akreditasi 1347/BAN-SM/SK/2021 yang diterbitkan pada 9 Desember 2021.
-
+                    MTs Assa’adah Cakung adalah Madrasah Tsanawiyah swasta yang berlokasi di Jl. Tambun Rengas RT 003/RW 007, Cakung Timur, Kecamatan Cakung, Kota Jakarta Timur, DKI Jakarta. 
+                    Sekolah berbasis Islam ini berada di bawah naungan Kementerian Agama dan telah terakreditasi A dengan nilai 92 berdasarkan SK Akreditasi 1347/BAN-SM/SK/2021 yang diterbitkan pada 9 Desember 2021. 
+                    Kurikulum yang digunakan merupakan yang terbaik, yaitu Kurikulum Merdeka yang dipadukan dengan pendidikan Islam, 
+                    sehingga menjadikan murid MTs Assa’adah Cakung tidak hanya cerdas dalam bidang keilmuan, tetapi juga cerdas dalam bidang religius.
                     </p>
                 </div>
             </div>
@@ -182,22 +182,22 @@
     
       <div class="galeri__grid">
         <div class="galeri__card">
-          <img src="assets/gambar.png" alt="galeri" />
+          <img src="assets/gambar4.jpg" alt="galeri" />
         </div>
         <div class="galeri__card">
-          <img src="assets/gambar.png" alt="galeri" />
+          <img src="assets/gambar6.jpg" alt="galeri" />
         </div>
         <div class="galeri__card">
-          <img src="assets/gambar.png" alt="galeri" />
+          <img src="assets/gambar10.jpg" alt="galeri" />
         </div>
         <div class="galeri__card">
-          <img src="assets/gambar.png" alt="galeri" />
+          <img src="assets/gambar18.jpg" alt="galeri" />
         </div>
         <div class="galeri__card">
-          <img src="assets/gambar.png" alt="galeri" />
+          <img src="assets/gambar11.jpg" alt="galeri" />
         </div>
         <div class="galeri__card">
-          <img src="assets/gambar.png" alt="galeri" />
+          <img src="assets/gambar5.jpg" alt="galeri" />
         </div>
       </div>
       
@@ -208,17 +208,24 @@
         <div class="feature-content">
             <h3><i class='bx bx-analyse'></i> VISI</h3>
             <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Mampu dalam iptek, kokoh dalam imtaq, berprestasi dan berakhlakul karimah.</li>
             </ul>
             <br>
             <h3><i class='bx bxs-right-top-arrow-circle'></i> MISI</h3>
             <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Berprestasi dan bimbingan melalui konsep belajar tuntas.</li>
+                <li>Menerapkan Imtaq dalam proses pembelajaran dan Iptek  dengan mata pelajaran  tertentu.</li>
+                <li>Berakhlakul karimah dalam kehidupan sehari-hari.</li>
+                <li>Melaksanakan program ekstrakurikuler.</li>
+                <li>Mengutamakan keteladanan dalam keluarga dan masyarakat.</li>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
             </ul>
         </div>
     </div>
@@ -227,15 +234,15 @@
         <div class="feature-content">
             <h3><i class="bi bi-crosshair"></i> TUJUAN</h3>
             <ul>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-                <br>
-                <br>
-                <br>
+                <li>Dapat mengamalkan ajaran agama hasil proses pembelajaran dan kegiatan pembiasaan (Terlaksananya kegiatan imtaq secara rutin).</li>
+                <li>Berusaha menguasai dasar-dasar ilmu pengetahuan dan teknologi sebagai bekal untuk melanjutkan pendidikan yang lebih tinggi.</li>
+                <li>Terwujudnya warga sekolah yang berakhlak mulia.</li>
+                <li>Terciptanya pembelajaran yang kreatif, inovatif, dan menyenangkan.</li>
+                <li>Tercapainya SKL di sekolah.</li>
+                <li>Memperoleh prestasi tertinggi dalam bidang ekstrakurikuler yang diikuti.</li>
+                <li>Terciptanya lingkungan yang tertib, bersih, indah, nyaman dan kondusif.</li>
+                <li>Meningkatkan pengetahuan dan keterampilan yang sesuai dengan minat dan bakat peserta didik.</li>
+                <li>Terwujudnya peserta didik yang dapat menerapkan nilai-nilai budaya dalam kehidupan sehari-hari di sekolah, di rumah dan di masyarakat.</li>
                 <br>
             </ul>
         </div>
@@ -440,7 +447,7 @@ section.quote .layar-dalam p {
 @media (width > 768px) {
  
   .feature__container {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -493,57 +500,213 @@ section.quote .layar-dalam p {
                 <div class="content">
                     <h3 class="title">Fasilitas sekolah <span>MTs Assa'adah</span></h3>
                     <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    MTs Assa’adah Cakung menyediakan berbagai fasilitas untuk menunjang proses belajar mengajar dan pengembangan diri siswa. 
+                    Sekolah ini memiliki ruang kelas yang nyaman dan dilengkapi dengan fasilitas pendukung seperti proyektor dan whiteboard. 
+                    Fasilitas olahraga seperti lapangan futsal dan basket juga disediakan untuk mendukung kesehatan dan kebugaran siswa. 
+                    Laboratorium komputer yang modern membantu siswa dalam memahami teknologi dan meningkatkan keterampilan digital mereka. 
+                    MTs Assa’adah Cakung juga menyediakan ruang UKS (Unit Kesehatan Sekolah) yang siap memberikan layanan kesehatan bagi siswa yang membutuhkan. Dengan fasilitas yang lengkap dan memadai, MTs Assa’adah Cakung berkomitmen menciptakan lingkungan belajar yang nyaman, aman, dan kondusif bagi perkembangan akademik serta karakter siswa.
 
                     </p>
+                    
                 </div>
             </div>
 
-            <div class="tim">
-                <div>
-                    <img src="assets/gambar.png" />
-                    <h6>uknown</h6>
-                    <span></span>
-                </div>
-                <div>
-                    <img src="assets/gambar.png" />
-                    <h6>uknown</h6>
-                    <span></span>
-                </div>
-                <div>
-                    <img src="assets/gambar.png" />
-                    <h6>uknown</h6>
-                    <span></span>
-                </div>
-            </div>
-<br>
-            <div class="tim">
-                <div>
-                    <img src="assets/gambar.png" />
-                    <h6>uknown</h6>
-                    <span></span>
-                </div>
-                <div>
-                    <img src="assets/gambar.png" />
-                    <h6>uknown</h6>
-                    <span></span>
-                </div>
-                <div>
-                    <img src="assets/gambar.png" />
-                    <h6>uknown</h6>
-                    <span></span>
-                </div>
-            </div>
+<style>
+      
+        /* Container Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 15px;
+            max-width: 1000px;
+            margin: auto;
+            padding: 20px;
+            grid-auto-flow: dense;
+            align-items: stretch; /* Supaya semua elemen sejajar */
+        }
 
+        /* Flip Card */
+        .card {
+            width: 100%;
+            height: 250px;
+            perspective: 1000px;
+        }
+
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+        }
+
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-front img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-back {
+            background: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 15px;
+            transform: rotateY(180deg);
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid-container {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+
+<div class="grid-container">
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="assets/gambar14.jpg" alt="Gedung Utama">
+            </div>
+            <div class="card-back">
+                <p>Gedung utama MTs Assa'adah, digunakan untuk berbagai kegiatan akademik.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="assets/gambar25.jpg" alt="Gedung Kedua">
+            </div>
+            <div class="card-back">
+                <p>Gedung kedua dengan fasilitas kelas yang nyaman dan modern.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="assets/gambar15.jpg" alt="Lapangan Basket dan Futsal">
+            </div>
+            <div class="card-back">
+                <p>Lapangan basket dan futsal untuk menunjang kegiatan olahraga siswa.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="assets/gambar16.jpg" alt="Ruang Kelas">
+            </div>
+            <div class="card-back">
+                <p>Ruang kelas yang nyaman, dilengkapi dengan fasilitas modern.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="assets/gambar21.jpg" alt="Lab Komputer">
+            </div>
+            <div class="card-back">
+                <p>Laboratorium komputer dengan perangkat modern untuk menunjang pembelajaran teknologi.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <img src="assets/gambar13.jpg" alt="UKS">
+            </div>
+            <div class="card-back">
+                <p>Unit Kesehatan Sekolah (UKS) yang siap memberikan layanan kesehatan bagi siswa.</p>
+            </div>
+        </div>
+    </div>
+
+</div>
 </section>
 
+<style>
+  .tim div {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tim div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.tim img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.tim div:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay teks saat hover */
+.tim div h6 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tim div:hover h6 {
+    opacity: 1;
+}
+
+</style>
 
 <section class="about" id="about">
         <div class="container">
             <div class="row">
                 <div class="content">
                     <p class="description">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    Selain itu, terdapat berbagai ekstrakurikuler yang dapat diikuti oleh siswa sebagai wadah untuk mengembangkan minat dan bakat mereka. 
+                    Melalui kegiatan ini, siswa tidak hanya memperoleh keterampilan baru, tetapi juga dapat meningkatkan kreativitas, membangun rasa percaya diri, 
+                    serta memperluas jaringan pertemanan. Dengan berpartisipasi dalam ekstrakurikuler, siswa juga belajar tentang kerja sama tim, kepemimpinan, 
+                    dan manajemen waktu, yang berguna bagi kehidupan mereka di masa depan.
                     </p>
                 </div>
             </div>
@@ -555,56 +718,56 @@ section.quote .layar-dalam p {
         <img src="assets/pramuka.png" alt="feature" />
         <div>
           <h4>Pramuka</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Pramuka adalah ekstrakurikuler yang bertujuan untuk membentuk karakter disiplin, mandiri, dan bertanggung jawab melalui berbagai kegiatan kepanduan.</p>
         </div>
       </div>
       <div class="feature__card">
         <img src="assets/futsal.png" alt="feature" />
         <div>
           <h4>Futsal</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Futsal adalah ekstrakurikuler olahraga yang melatih keterampilan bermain bola, kerja sama tim, dan ketangkasan untuk meningkatkan kemampuan serta sportivitas anggota.</p>
         </div>
       </div>
       <div class="feature__card">
         <img src="assets/hadroh.png" alt="feature" />
         <div>
           <h4>Hadroh</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Ekstrakurikuler Hadroh merupakan wadah bagi siswa-siswi yang tertarik dengan seni musik tradisional yang biasanya digunakan dalam acara-acara keagamaan dan perayaan Islami.</p>
         </div>
       </div>
       <div class="feature__card">
         <img src="assets/paskibra.png" alt="feature" />
         <div>
-          <h4>Paskibra</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </div>
-      </div>
-      <div class="feature__card">
-        <img src="assets/desain.png" alt="feature" />
-        <div>
-          <h4>Desain grafis</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h4>PASKIBRA</h4>
+          <p>PASKIBRA adalah kegiatan siswa untuk berlatih baris berbaris, upacara bendera, dan mengibarkan bendera. PASKIBRA merupakan singkatan dari Pasukan Pengibar Bendera.</p>
         </div>
       </div>
       <div class="feature__card">
         <img src="assets/public.png" alt="feature" />
         <div>
           <h4>Public speaking</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Public speaking adalah kegiatan berlatih berbicara di depan umum atau berpidato. Kegiatan ini dapat meningkatkan kepercayaan diri dan kemampuan berbicara di depan umum.</p>
         </div>
       </div>
       <div class="feature__card">
         <img src="assets/basket.png" alt="feature" />
         <div>
           <h4>Basket</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Basket adalah ekstrakurikuler yang melatih keterampilan dribbling, passing, shooting, serta kerja sama tim dan sportivitas melalui latihan dan pertandingan.</p>
         </div>
       </div>
       <div class="feature__card">
         <img src="assets/tari.png" alt="feature" />
         <div>
           <h4>Tari</h4>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <p>Ekstrakurikuler Tari adalah kegiatan mempelajari dan mengembangkan seni tari. yang bertujuan membantu siswa untuk mencintai budaya daerah dan melestarikan seni tradisional.</p>
+        </div>
+      </div>
+      <div class="feature__card">
+        <img src="assets/desain.png" alt="feature" />
+        <div>
+          <h4>Desain grafis</h4>
+          <p>Coming soon.</p>
         </div>
       </div>
     </section>

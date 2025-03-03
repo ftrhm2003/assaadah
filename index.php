@@ -76,11 +76,11 @@
       <div class="section__container gallary__container">
         <div class="image__gallary">
           <div class="gallary__col">
-            <img src="assets/gambar.png" alt="gallary" />
+            <img src="assets/gambar3.jpg" alt="gallary" />
           </div>
           <div class="gallary__col">
-            <img src="assets/gambar.png" alt="gallary" />
-            <img src="assets/gambar.png" alt="gallary" />
+            <img src="assets/gambar1.jpg" alt="gallary" />
+            <img src="assets/gambar2.jpg" alt="gallary" />
           </div>
         </div>
         <div class="gallary__content">
@@ -175,7 +175,7 @@
 }
 
 .gallary__col img {
-    width: 100%;
+    width: 330px;
     height: auto;
     border-radius: 1rem;
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);

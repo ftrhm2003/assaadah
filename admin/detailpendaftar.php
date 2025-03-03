@@ -9,13 +9,27 @@
   <h1 class="h3 mb-4 text-gray-800">DETAIL PENDAFTAR</h1>
   
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-12">
       <div class="card shadow mb-4">
         <div class="card-header py-3">
           <h6 class="m-0 font-weight-bold text-primary">DATA DIRI</h6>
         </div>
         <div class="card-body">
           <div class="card-body">
+          <?php 
+            if($data_pendaftarinside['status'] == 0) {
+              echo '
+              <div class="alert alert-warning">
+                  Registrant data has not been validated
+              </div>';
+            } else if($data_pendaftarinside['status'] == 1) {
+              echo '
+              <div class="alert alert-info">
+                  Data siswa sudah lengkap <b>Checked</b>
+              </div>';
+            } 
+            ?>
+
             <div class="col-auto mt-3 text-center">
               <?php
               if(isset($data_pendaftar['foto']) && $data_pendaftar['foto'] != "") {
@@ -68,9 +82,19 @@
                 <small class="text-muted"><?= $data_pendaftar['telepon'] ?></small>
               </li>
             </ul>
+
+            <button type="button" class="btn btn-primary mt-3 btn-block" onclick="window.location.href='download_all.php?pendaftar_id=<?= $data_pendaftar['id'] ?>&nama=<?= urlencode($data_pendaftar['nama']) ?>'">
+             Download Semua berkas siswa
+            </button>
+            
+            <button type="button" class="btn btn-primary mt-3 btn-block" data-toggle="modal" data-target="#modalvalidasi">
+                Verifikasi data siswa sudah lengkap
+            </button>
           </div>
         </div>
+        <a href="regis_data.php" class="btn btn-danger">Kembali</a>
       </div>
+
       </div>
       <div class="col-md-6">
       <div class="card shadow mb-4">
@@ -79,15 +103,7 @@
         </div>
             <div class="card-body">
                 <ul class="list-group mb-3">
-                    <li class="list-group-item">
-                        <h6 class="mb-0" style="color: black;">Nama</h6>
-                        <small class="text-muted"> <?= htmlspecialchars($data_pendaftar['nama']) ?> </small>
-                    </li>
-                    <li class="list-group-item">
-                        <h6 class="mb-0" style="color: black;">Alamat</h6>
-                        <small class="text-muted"> <?= htmlspecialchars($data_pendaftar['alamat']) ?> </small>
-                    </li>
-
+                    
                     <?php
                     $dokumen = [
                         'kartu_keluarga' => 'Kartu Keluarga',
@@ -120,7 +136,6 @@
                         }
                     }
                     ?>
-                    <td><a href="download_all.php?pendaftar_id=<?= $data_pendaftar['id'] ?>&nama=<?= urlencode($data_pendaftar['nama']) ?>" class="btn btn-primary">Download Semua</a></td>
                 </ul>
             </div>
         </div>
@@ -133,20 +148,6 @@
         <div class="row-3">
         <div class="card-body">
           <div class="card-body">
-
-            <?php 
-            if($data_pendaftarinside['status'] == 0) {
-              echo '
-              <div class="alert alert-warning">
-                  Registrant data has not been validated
-              </div>';
-            } else if($data_pendaftarinside['status'] == 1) {
-              echo '
-              <div class="alert alert-info">
-                  Registrant data is stated <b>Checked</b>
-              </div>';
-            } 
-            ?>
             
             <ul class="list-group">
             <h6 class="m-0 font-weight-bold text-dark">Data Siswa</h6>
@@ -313,30 +314,26 @@
               </ul>
             <?php endif; ?>
 
-            <button type="button" class="btn btn-primary mt-3 btn-block" data-toggle="modal" data-target="#modalvalidasi">
-                Validation of registrant data
-            </button>
-
             <!-- Modal -->
             <div class="modal fade" id="modalvalidasi" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <form action="<?= $base_url ?>/admin/detailpendaftar.php?id=<?= $id_pendaftar ?>" method="POST">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Registrar's Data Assessment</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Verifikasi data siswa sudah lengkap</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                          <label for="pendaftarinside">Evaluate</label>
+                          <label for="pendaftarinside">Verifikasi</label>
                           <select name="pendaftarinside" id="pendaftarinside" class="form-control" required>
-                            <option value="">--Choose--</option>
-                            <option value="1">Checked</option>
+                            <option value="">--pilih--</option>
+                            <option value="1">Data lengkap</option>
                           </select>
                         </div>
                         <div class="modal-footer">
-                            <button name="simpan" value="simpan_nilai" class="btn btn-primary">Store</button>
+                            <button name="simpan" value="simpan_nilai" class="btn btn-primary">Simpan</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                         </div>
                       </form>
@@ -346,7 +343,7 @@
           </div>
         </div>
       </div>
-      <a href="regis_data.php" class="btn btn-danger">Kembali</a>
+
     </div>
     
   </div>

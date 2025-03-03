@@ -39,27 +39,27 @@ include('../template/headersiswa.php');  // Menyertakan header template
                 <h6 class="m-0 font-weight-bold text-primary mb-3">Data Siswa:</h6>
                 <div class="form-group">
                     <label for="nokk">Nomor KK</label>
-                    <input type="text" class="form-control" id="nokk" placeholder="Enter KK Number" name="nokk">
+                    <input type="text" class="form-control" id="nokk" placeholder="isi nomor KK" name="nokk">
                 </div>
                 <div class="form-group">
                     <label for="nik">NIK</label>
-                    <input type="text" class="form-control" id="nik" placeholder="Enter NIK" name="nik">
+                    <input type="text" class="form-control" id="nik" placeholder="isi NIK" name="nik">
                 </div>
                 <div class="form-group">
                     <label for="anakke">Anak Ke</label>
-                    <input type="text" class="form-control" id="anakke" placeholder="Enter number" name="anakke">
+                    <input type="text" class="form-control" id="anakke" placeholder="isi angka" name="anakke">
                 </div>
                 <div class="form-group">
                     <label for="jmlsaudara">Jumlah Saudara</label>
-                    <input type="text" class="form-control" id="jmlsaudara" placeholder="Enter number" name="jmlsaudara">
+                    <input type="text" class="form-control" id="jmlsaudara" placeholder="isi angka" name="jmlsaudara">
                 </div>
                 <div class="form-group">
                     <label for="hobi">Hobi</label>
-                    <input type="text" class="form-control" id="hobi" placeholder="Enter hobi" name="hobi">
+                    <input type="text" class="form-control" id="hobi" placeholder="isi hobi" name="hobi">
                 </div>
                 <div class="form-group">
-                    <label for="citacita">Cita Cita</label>
-                    <input type="text" class="form-control" id="citacita" placeholder="Enter cita cita" name="citacita">
+                    <label for="citacita">Cita-Cita</label>
+                    <input type="text" class="form-control" id="citacita" placeholder="isi cita-cita" name="citacita">
                 </div>
                 <div class="form-group">
                 <label for="prasekolah">Pra Sekolah</label>
@@ -80,7 +80,7 @@ include('../template/headersiswa.php');  // Menyertakan header template
                 </div>
                 <div class="form-group">
                     <label for="sekolahasal">Sekolah Asal</label>
-                    <input name="sekolahasal" type="text" class="form-control" id="sekolahasal" placeholder="Sekolah Asal">
+                    <input name="sekolahasal" type="text" class="form-control" id="sekolahasal" placeholder="isi Sekolah Asal">
                 </div>
                 
 
@@ -115,7 +115,7 @@ include('../template/headersiswa.php');  // Menyertakan header template
                 <div class="form-group">
                 <label for="penghasilan_ayah">Penghasilan Ayah</label>
                     <select class="form-control" id="penghasilan_ayah" name="penghasilan_ayah">
-                        <option value="">-- Pilih Pendidikan Ayah --</option>
+                        <option value="">-- Pilih Penghasilan Ayah --</option>
                         <option value="Kurang dari 500.000">Kurang dari 500.000</option>
                         <option value="500.000 - 1000.000">500.000 - 1000.000</option>
                         <option value="1000.000 - 2000.000">1000.000 - 2000.000</option>
@@ -155,7 +155,7 @@ include('../template/headersiswa.php');  // Menyertakan header template
                 <div class="form-group">
                 <label for="penghasilan_ibu">Penghasilan Ibu</label>
                     <select class="form-control" id="penghasilan_ibu" name="penghasilan_ibu">
-                        <option value="">-- Pilih Pendidikan Ibu --</option>
+                        <option value="">-- Pilih Penghasilan Ibu --</option>
                         <option value="Kurang dari 500.000">Kurang dari 500.000</option>
                         <option value="500.000 - 1000.000">500.000 - 1000.000</option>
                         <option value="1000.000 - 2000.000">1000.000 - 2000.000</option>
@@ -196,7 +196,7 @@ include('../template/headersiswa.php');  // Menyertakan header template
                 <div class="form-group">
                 <label for="penghasilan_wali">Penghasilan Wali</label>
                     <select class="form-control" id="penghasilan_wali" name="penghasilan_wali">
-                        <option value="">-- Pilih Pendidikan Wali --</option>
+                        <option value="">-- Pilih Penghasilan Wali --</option>
                         <option value="Kurang dari 500.000">Kurang dari 500.000</option>
                         <option value="500.000 - 1000.000">500.000 - 1000.000</option>
                         <option value="1000.000 - 2000.000">1000.000 - 2000.000</option>
