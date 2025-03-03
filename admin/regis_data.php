@@ -2,7 +2,6 @@
 
 <?php include('regist_data_control.php'); ?>
 
-
 <?php include('../template/header.php'); ?>
 
 <!-- Begin Page Content -->
@@ -20,6 +19,11 @@
       unset($_SESSION['pesan_sukses']);
       ?>
     </div>
+    
+    <div class="col-md-12 mb-3">
+      <a href="excel_control.php" class="btn btn-success">Convert to Excel</a>
+    </div>
+    
     <div class="col-md-12">
       <table class="table table-bordered table-hover">
         <tr>
