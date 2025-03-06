@@ -75,7 +75,7 @@ $status = $seleksi['status'] ?? null;
                         <p class="card-text" href="">link</p>
                         
                         <?php elseif ($status == 2): ?>
-                        <h5 class="card-title mb-3">Pendafataran sedang di proses</h5>
+                        <h5 class="card-title mb-3">Pendaftaran sedang di proses</h5>
                         <div class="col-auto">
                             <i class="fa fa-clock text-danger mb-3" style="font-size: 90px;"></i>
                         </div>

@@ -38,8 +38,7 @@ body {
     <section id="topbar" class="d-none d-lg-flex align-items-center bg-primary text-white p-2">
         <div class="container d-flex justify-content-between">
             <div>
-                <i class="bi bi-phone"></i> +62 134334773 &nbsp; | &nbsp;
-                <i class="bi bi-clock"></i> Mon-Sat: 11:00 AM - 23:00 PM
+                <i class="bi bi-clock"></i> Senin - Jumat: 07:00 - 15:00 
             </div>
             <div class="col-md-6 text-end">
                 <a href="https://www.facebook.com/mts.assaadah.3" class="text-white mx-2"><i class="bi bi-facebook"></i></a>

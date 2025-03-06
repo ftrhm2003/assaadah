@@ -119,7 +119,7 @@
                         </div>
                         <div class="col-md-6">
                             <label for="ulangi_password">Ulangi password</label>
-                            <input name="ulangi_password" type="password" class="form-control" id="ulangi_password" placeholder="Repeat the password">
+                            <input name="ulangi_password" type="password" class="form-control" id="ulangi_password" placeholder="Ulangi password">
                         </div>
                     </div>
 

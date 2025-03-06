@@ -111,7 +111,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <form class="user" action="login_control.php" method="POST">
                         <div class="form-group" style="margin-bottom: 20px;">
                             <input type="text" name="username" class="form-control form-control-user" id="username" 
-                                placeholder="Enter the username" style="text-align: center;">
+                                placeholder="Masukan username" style="text-align: center;">
                         </div>
                         <div class="form-group" style="margin-bottom: 20px;">
                             <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" 

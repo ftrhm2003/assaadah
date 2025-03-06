@@ -9,30 +9,43 @@ include('../template/headersiswa.php');  // Menyertakan header template
 <!-- Begin Page Content -->
 <div class="container-fluid">
 
+
+<?php
+
+$form_disabled = false; // Variabel untuk menyembunyikan form
+
+if (isset($_SESSION['pendaftar_inside_id'])) {
+    $pendaftar_inside_id = $_SESSION['pendaftar_inside_id'];
+
+    // Cek apakah data sudah ada
+    $cek_data = "SELECT * FROM pendaftarinside WHERE pendaftar_inside_id = '$pendaftar_inside_id'";
+    $result_cek = mysqli_query($koneksi, $cek_data);
+
+    if (mysqli_num_rows($result_cek) > 0) {
+        $form_disabled = true; // Jika data sudah ada, form akan disembunyikan
+    }
+}
+?>
+
+
 <!-- Warning Alert -->
 <?php if(isset($data_pendaftar['is_verified']) && $data_pendaftar['is_verified'] == 0) { ?>
     <div class="alert alert-warning text-center" role="alert">
-      <strong>Perhatian!</strong> Segera lengkapi data tambahan untuk keperluan pendaftaran. <br>
+    <strong>Perhatian!</strong> Segera lengkapi data pendaftaran untuk keperluan pendaftaran. ⚠️ <br>
       
     </div>
   <?php } else { ?>
     <div class="alert alert-success text-center" role="alert">
-      <strong>Data sudah lengkap!</strong> ✅
+      <strong>Data sudah lengkap, Terimakasih!</strong> ✅
     </div>
   <?php } ?>
 
-    <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">Registrasi data siswa</h1>
+    <?php if (!$form_disabled) : ?>
+    <h1 class="h3 mb-4 text-gray-800">Lengakapi data pendaftaran siswa</h1>
 
     <!-- Alert Notification -->
-    <?php if (isset($_SESSION['pesan_sukses'])) { ?>
-        <div class="alert alert-success">
-            <?= $_SESSION['pesan_sukses']; ?>
-        </div>
-        <?php unset($_SESSION['pesan_sukses']); ?>
-    <?php } ?>
+   
 
-      
         <div class="card shadow mb-4">
           <div class="card-body">
             <form class="user" action="registrasi_inside_control.php" method="POST">
@@ -251,6 +264,9 @@ include('../template/headersiswa.php');  // Menyertakan header template
         });
     });
   </script>
+<?php else: ?>
+    
+<?php endif; ?>
 
 </div>
 <!-- /.container-fluid -->

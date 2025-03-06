@@ -20,7 +20,7 @@
             if($data_pendaftarinside['status'] == 0) {
               echo '
               <div class="alert alert-warning">
-                  Registrant data has not been validated
+                  Data siswa belum diverifikasi
               </div>';
             } else if($data_pendaftarinside['status'] == 1) {
               echo '

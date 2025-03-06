@@ -37,7 +37,7 @@ if(isset($_POST['btn_login'])) {
 
         }
     } else {
-        $_SESSION['login_error'] = "Your username or password is wrong!";
+        $_SESSION['login_error'] = "Username atau password kamu salah!";
         header('location:login.php');
 
     }

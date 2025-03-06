@@ -63,8 +63,7 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-6   text-start">
-             <span class="px-3"><i class="bi bi-phone "></i> +62 134334773 </span>
-          <i class="bi bi-clock"></i> Mon-Sat: 11:00 AM - 23:00 PM
+          <i class="bi bi-clock"></i> Senin - Jumat: 07:00 - 15:00 
             </div>
             <div class="col-md-6 text-end">
                 <a href="https://www.facebook.com/mts.assaadah.3" class="text-white mx-2"><i class="bi bi-facebook"></i></a>
@@ -131,11 +130,18 @@ $result = $koneksi->query($sql);
     </div>
 </section>
 
-<footer id="contact">
-            <div class="layar-dalam">
-                <div class="copyright">&copy; 2025 MTs Assa'adah</div>
-            </div>
-        </footer>
+<footer id="contact" style="
+    background: #343a40; 
+    color: white; 
+    text-align: center; 
+    padding: 10px 0; 
+    width: 100%; 
+    position: absolute; 
+    bottom: 0;">
+    <div class="layar-dalam">
+        <div class="copyright mb-2">&copy; 2025 MTs Assa'adah</div>
+    </div>
+</footer>
         <script src="java.js"></script>
 </body>
 </html>
