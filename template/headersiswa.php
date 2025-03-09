@@ -2,10 +2,9 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="e-development.tech">
 
   <title>Student registration application</title>
@@ -19,55 +18,45 @@
   <!-- Custom styles for this template-->
   <link href="../assets/css/sb-admin-2.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
-
+  <!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- css datepicker -->
   <link href="../assets/vendor/datepicker/css/bootstrap-datepicker.css" rel="stylesheet">
 
-  <link rel="stylesheet" href="syle_hdsiswa.css">
   <style>
-  @media (max-width: 768px) {
-  body {
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
+    
+/* Sidebar Styling */
+.offcanvas {
+    width: 60%; /* Lebih kecil di mobile */
+    max-width: 300px; /* Maksimum 300px */
+}
 
-  .sidebar {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Hide the sidebar initially */
-    height: 100%;
-    width: 250px; /* Set your desired width */
-    z-index: 1000; /* Ensure it's above the main content */
-    transition: left 0.5s; /* Smooth transition for showing/hiding the sidebar */
-  }
+.offcanvas-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Biar kontennya di tengah */
+    text-align: center;
+}
 
-  .sidebar.show {
-    left: 0; /* Show the sidebar */
-  }
+/* Pusatkan Logo */
+.sidebar-brand {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
 
-  .main-content {
-    padding: 0px;
-  }
-  }
-</style>
+/* Pastikan Tombol Close Berfungsi */
+.offcanvas-header .btn-close {
+    z-index: 1050; /* Pastikan di atas elemen lain */
+    position: absolute;
+    right: 15px;
+    top: 10px;
+}
 
-<script>
-  // Toggle sidebar on mobile
-  function toggleSidebar() {
-    var sidebar = document.getElementById('accordionSidebar');
-    sidebar.classList.toggle('show');
-  }
 
-  // Prevent the sidebar from closing immediately on mobile
-  document.addEventListener('touchstart', function(event) {
-    var sidebar = document.getElementById('accordionSidebar');
-    var isClickInside = sidebar.contains(event.target);
 
-    if (!isClickInside) {
-      sidebar.classList.remove('show');
-    }
-  });
-</script>
-
+  </style>
 </head>
 
 <body id="page-top">
@@ -75,152 +64,125 @@
   <!-- Page Wrapper -->
   <div id="wrapper">
 
-    <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
-        <img src="../assets/LOGO_MTS.png" alt="Logo MTS" class="logo-sidebar" style="max-height: 50px;">
-      </a>
 
 
+<!-- Sidebar -->
+ 
+<div class="d-lg-flex">
+  
+<div class="offcanvas-lg offcanvas-top bg-gradient-primary sidebar sidebar-dark" id="sidebarMenu">
+        <div class="offcanvas-header d-lg-none">
+        </div>
+        
+        <div class="offcanvas-body">
+            <ul class="navbar-nav">
 
-      <?php if($_SESSION['level'] == 'siswa') { ?>
+                <!-- Sidebar - Brand -->
+                <a class="sidebar-brand d-flex align-items-center justify-content-center" href="dashboard.php">
+                    <img src="../assets/LOGO_MTS.png" alt="Logo MTS" class="logo-sidebar" style="max-height: 50px;">
+                </a>
 
-          <!-- Nav Item - Dashboard -->
-          <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span></a>
-          </li>
+                <?php if(isset($_SESSION['level']) && $_SESSION['level'] == 'siswa') { ?>
 
-          <!-- Divider
-          <hr class="sidebar-divider my-0">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">
+                            <i class="fas fa-fw fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="nilai.php">
-              <i class="fas fa-fw fa-list"></i>
-              <span>Grades</span></a>
-          </li>
-          -->
+                    <!-- Edit Profile -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="editprofil.php">
+                            <i class="fas fa-fw fa-user"></i>
+                            <span>Edit Profile</span>
+                        </a>
+                    </li>
 
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
+                    <!-- Lengkapi Data -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="registrasi_inside.php">
+                            <i class="fas fa-edit"></i>
+                            <span>Lengkapi Data</span>
+                        </a>
+                    </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="editprofil.php">
-              <i class="fas fa-fw fa-user"></i>
-              <span>Edit profile</span></a>
-          </li>
+                    <!-- Lengkapi Berkas -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="regist_berkas.php">
+                            <i class="fas fa-upload"></i>
+                            <span>Lengkapi Berkas</span>
+                        </a>
+                    </li>
 
-           <!-- Divider -->
-           <hr class="sidebar-divider my-0">
+                <?php } ?>
 
-          <li class="nav-item">
-          <a class="nav-link" href="registrasi_inside.php">
-              <i class="fas fa-edit"></i>
-              <span>Lengkapi data</span></a>
-          </li>
+                <?php if(isset($_SESSION['level']) && $_SESSION['level'] == 'admin') { ?>
 
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
+                    <!-- Dashboard -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="dashboard.php">
+                            <i class="fas fa-fw fa-tachometer-alt"></i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="regist_berkas.php">
-              <i class="fas fa-upload"></i>
-              <span>Lengakapi Berkas</span></a>
-          </li>
+                    <!-- Data Pendaftaran -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="regis_data.php">
+                            <i class="fas fa-fw fa-list"></i>
+                            <span>Data Pendaftaran</span>
+                        </a>
+                    </li>
 
-          <!-- Divider
-          <hr class="sidebar-divider my-0">
+                    <!-- Berkas Data -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="berkas_data.php">
+                            <i class="fas fa-fw fa-list"></i>
+                            <span>Berkas Data</span>
+                        </a>
+                    </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="addpayment.php">
-              <i class="fas fa-fw fa-user"></i>
-              <span>Payment</span></a>
-          </li>
-          -->
+                    <!-- Payment Data -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="paymentdetail.php">
+                            <i class="fas fa-fw fa-list"></i>
+                            <span>Payment Data</span>
+                        </a>
+                    </li>
 
-      <?php } ?>
+                    <!-- News Data -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="newsdetail.php">
+                            <i class="fas fa-fw fa-list"></i>
+                            <span>News Data</span>
+                        </a>
+                    </li>
 
+                    <!-- Agenda Data -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="agenda.php">
+                            <i class="fas fa-fw fa-list"></i>
+                            <span>Agenda Data</span>
+                        </a>
+                    </li>
 
-      <!-- jika level admin -->
-      <?php if($_SESSION['level'] == 'admin') { ?>
+                <?php } ?>
 
-          <!-- Nav Item - Dashboard -->
-          <li class="nav-item">
-            <a class="nav-link" href="dashboard.php">
-              <i class="fas fa-fw fa-tachometer-alt"></i>
-              <span>Dashboard</span></a>
-          </li>
+                <!-- Logout -->
+                <li class="nav-item">
+                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">
+                        <i class="fas fa-fw fa-sign-out-alt"></i>
+                        <span>Logout</span>
+                    </a>
+                </li>
 
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
+            </ul>
+        </div>
+    </div>
+</div>
 
-          <li class="nav-item">
-            <a class="nav-link" href="regis_data.php">
-              <i class="fas fa-fw fa-list"></i>
-              <span>Data Pendaftaran</span></a>
-          </li>
-
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
-
-          <li class="nav-item">
-            <a class="nav-link" href="berkas_data.php">
-              <i class="fas fa-fw fa-list"></i>
-              <span>Berkas Data</span></a>
-          </li>
-
-
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
-
-          <li class="nav-item">
-            <a class="nav-link" href="paymentdetail.php">
-              <i class="fas fa-fw fa-list"></i>
-              <span>Payment data</span></a>
-          </li>
-
-          <!-- Divider -->
-          <hr class="sidebar-divider my-0">
-
-          <li class="nav-item">
-            <a class="nav-link" href="newsdetail.php">
-              <i class="fas fa-fw fa-list"></i>
-              <span>News data</span></a>
-          </li>
-
-            <!-- Divider -->
-          <hr class="sidebar-divider my-0">
-
-          <li class="nav-item">
-          <a class="nav-link" href="agenda.php">
-          <i class="fas fa-fw fa-list"></i>
-          <span>Agenda data</span></a>
-          </li>
-      
-      <?php } ?>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider my-0">
-
-      <li class="nav-item">
-        <a class="nav-link" href="#" data-toggle="modal" data-target="#logoutModal">
-          <i class="fas fa-fw fa-sign-out-alt"></i>
-          <span>Logout</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button onclick="toggleSidebar()" class="rounded-circle border-0" id="sidebarToggle"></button>
-      </div>
-
-    </ul>
-    <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
@@ -231,15 +193,14 @@
         <!-- Topbar -->
         <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
-          <!-- Sidebar Toggle (Topbar) -->
-          <button id="sidebarToggleTop" class="btn btn-link d-md-none bg-white ">
-            <i class="bi bi-justify" style="font-size: 1.5rem; margin-right: 0px;"></i>
-            <i class="fa fa-bars"></i>
-          </button>
-
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">
+
+          <!-- Sidebar Toggle Button (Muncul di Mobile) -->
+<button class="btn btn-primary d-lg-none m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+    <i class="fas fa-bars"></i> 
+</button>
 
             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -279,28 +240,5 @@
 
         </nav>
         <!-- End of Topbar -->
-
-<script>
-  // Toggle sidebar on mobile
-  function toggleSidebar() {
-    var sidebar = document.getElementById('accordionSidebar');
-    sidebar.classList.toggle('show');
-  }
-
-  // Add event listener to the toggle button
-  document.getElementById("sidebarToggleTop").addEventListener("click", function () {
-    toggleSidebar();
-  });
-
-  // Prevent the sidebar from closing immediately on mobile
-  document.addEventListener('touchstart', function(event) {
-    var sidebar = document.getElementById('accordionSidebar');
-    var isClickInside = sidebar.contains(event.target) || event.target.closest("#sidebarToggleTop");
-
-    if (!isClickInside) {
-      sidebar.classList.remove('show');
-    }
-  });
-</script>
 
 
