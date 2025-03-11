@@ -35,6 +35,17 @@
   box-sizing: border-box;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+
 .section__container {
   max-width: var(--max-width);
   margin: auto;
@@ -130,18 +141,20 @@ $result = $koneksi->query($sql);
     </div>
 </section>
 
+
 <footer id="contact" style="
     background: #343a40; 
     color: white; 
     text-align: center; 
     padding: 10px 0; 
-    width: 100%; 
-    position: absolute; 
-    bottom: 0;">
+    width: 100%;
+    position: relative;
+    margin-top: auto;">
     <div class="layar-dalam">
         <div class="copyright mb-2">&copy; 2025 MTs Assa'adah</div>
     </div>
 </footer>
+
         <script src="java.js"></script>
 </body>
 </html>

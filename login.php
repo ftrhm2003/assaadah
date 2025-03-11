@@ -127,6 +127,9 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="text-center">
                         <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
                     </div>
+                    <div class="text-center">
+                        <a class="small" href="forgot_password_form.php">Lupa Password!</a>
+                    </div>
                 </div>
               </div>
             </div>
