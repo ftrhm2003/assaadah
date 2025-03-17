@@ -5,7 +5,13 @@ ob_start();
 // Pastikan sesi belum dimulai sebelum memulai
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
+    
 }
+?>
+
+<?php
+$registrasi_file = 'config/registrasi_status.json';
+$registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tampilkan"];
 ?>
 
 <!DOCTYPE html>
@@ -108,25 +114,36 @@ if (session_status() === PHP_SESSION_NONE) {
                     }
                     ?>
 
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
                     <form class="user" action="login_control.php" method="POST">
                         <div class="form-group" style="margin-bottom: 20px;">
                             <input type="text" name="username" class="form-control form-control-user" id="username" 
                                 placeholder="Enter the username" style="text-align: center;">
                         </div>
-                        <div class="form-group" style="margin-bottom: 20px;">
-                            <input type="password" name="password" class="form-control form-control-user" id="exampleInputPassword" 
+                        
+                        <div class="form-group" style="margin-bottom: 20px; position: relative;">
+                            <input type="password" name="password" class="form-control form-control-user" id="password" 
                                 placeholder="Password" style="text-align: center;">
+                            
+                            <!-- Toggle Eye Icon -->
+                            <span id="togglePassword" 
+                                style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); cursor: pointer;">
+                                <i class="fas fa-eye"></i>
+                            </span>
                         </div>
+
                         <button type="submit" name="btn_login" value="login" class="btn btn-primary btn-user btn-block" 
                             style="display: block; margin: auto;">
                             Masuk
                         </button>
                     </form>
-
                     <hr>
-                    <div class="text-center">
-                        <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
-                    </div>
+                    <?php if ($registrasi_status): ?>
+                        <div class="text-center">
+                            <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
+                        </div>
+                    <?php endif; ?>
                 </div>
               </div>
             </div>
@@ -155,6 +172,22 @@ if (session_status() === PHP_SESSION_NONE) {
 
 <!-- File JavaScript Custom -->
 <script src="java.js"></script>
+<script>
+ document.getElementById("togglePassword").addEventListener("click", function() {
+  var passwordField = document.getElementById("password");
+  var icon = this.querySelector("i");
+
+    if (passwordField.type === "password") {
+       passwordField.type = "text";
+      icon.classList.remove("fa-eye");
+      icon.classList.add("fa-eye-slash"); // Ubah ke ikon mata tertutup
+        } else {
+          passwordField.type = "password";
+          icon.classList.remove("fa-eye-slash");
+          icon.classList.add("fa-eye"); // Ubah ke ikon mata terbuka
+                }
+        });
+</script>
 
 
 <footer id="contact" style="

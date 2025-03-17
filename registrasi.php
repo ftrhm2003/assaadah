@@ -112,14 +112,34 @@
                             <input name="telepon" type="text" class="form-control" id="telepon" placeholder="Telephone">
                         </div>
                     </div>
+
+                    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
                     <div class="form-group row">
+                        <!-- Input Password -->
                         <div class="col-md-6">
                             <label for="password">Password</label>
-                            <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                            <div class="input-group">
+                                <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text toggle-password" data-target="password" style="cursor: pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Input Ulangi Password -->
                         <div class="col-md-6">
-                            <label for="ulangi_password">Ulangi password</label>
-                            <input name="ulangi_password" type="password" class="form-control" id="ulangi_password" placeholder="Repeat the password">
+                            <label for="ulangi_password">Ulangi Password</label>
+                            <div class="input-group">
+                                <input name="ulangi_password" type="password" class="form-control" id="ulangi_password" placeholder="Repeat the password">
+                                <div class="input-group-append">
+                                    <span class="input-group-text toggle-password" data-target="ulangi_password" style="cursor: pointer;">
+                                        <i class="fas fa-eye"></i>
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -129,7 +149,7 @@
                   </form>
                   <hr>
                   <div class="text-center">
-                    <a class="small" href="login.php">Apakamu sudah memiliki akun?Login!</a>
+                    <a class="small" href="login.php">Apakamu sudah memiliki akun? Login!</a>
                   </div>
                 </div>
               </div>
@@ -166,6 +186,25 @@
     });
   </script>
 
+  <script>
+  document.querySelectorAll(".toggle-password").forEach(function(element) {
+      element.addEventListener("click", function() {
+          var targetId = this.getAttribute("data-target");
+          var passwordField = document.getElementById(targetId);
+          var icon = this.querySelector("i");
+
+          if (passwordField.type === "password") {
+              passwordField.type = "text";
+              icon.classList.remove("fa-eye");
+              icon.classList.add("fa-eye-slash"); // Ubah ke ikon mata tertutup
+          } else {
+              passwordField.type = "password";
+              icon.classList.remove("fa-eye-slash");
+              icon.classList.add("fa-eye"); // Ubah ke ikon mata terbuka
+          }
+      });
+  });
+  </script>
 </body>
 
 </html>

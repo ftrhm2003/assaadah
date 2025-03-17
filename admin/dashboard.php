@@ -3,6 +3,39 @@ ob_start(); // Menyimpan output dalam buffer
 session_start();
 ?>
 
+<?php
+$registrasi_file = '../config/registrasi_status.json';
+
+// Jika file tidak ada, buat dengan default ditampilkan
+if (!file_exists($registrasi_file)) {
+    file_put_contents($registrasi_file, json_encode(["tampilkan" => true]));
+}
+
+// Fungsi untuk membaca status tombol registrasi
+function getRegistrasiStatus() {
+    global $registrasi_file;
+    return json_decode(file_get_contents($registrasi_file), true);
+}
+
+// Fungsi untuk menyimpan status tombol registrasi
+function saveRegistrasiStatus($status) {
+    global $registrasi_file;
+    file_put_contents($registrasi_file, json_encode(["tampilkan" => $status]));
+}
+
+// Ambil status tombol registrasi
+$registrasi_status = getRegistrasiStatus()["tampilkan"];
+
+// Proses toggle tombol registrasi
+if (isset($_POST['toggle_registrasi'])) {
+    $new_status = !$registrasi_status;
+    saveRegistrasiStatus($new_status);
+    $_SESSION['pesan_sukses'] = "Status tombol registrasi berhasil diperbarui!";
+    header("Location: dashboard.php");
+    exit;
+}
+?>
+
 <?php include('../config/auto_load.php'); ?>
 
 <?php include('dashboard_control.php') ?>
@@ -117,53 +150,77 @@ if (isset($_POST['hapus_pengumuman'])) {
 }
 ?>
 
-  <hr class="mt-3">
-  <div class="row">
-    <div class="col-md-12">
-    <div class="col-md-6">
-        <div class="card shadow mb-4">
-            <div class="card-header py-3">
-                <h6 class="m-0 font-weight-bold text-primary">PENGUMUMAN HASIL PENDAFTARAN</h6>
-            </div>
-            <div class="card-body">
-            <?php if (isset($_SESSION['pesan_sukses'])): ?>
-        <p style="color: green;"><?php echo $_SESSION['pesan_sukses']; unset($_SESSION['pesan_sukses']); ?></p>
-    <?php endif; ?>
+      <hr class="mt-3">
+      <div class="row">
+        <div class="col-md-12">
+        <div class="col-md-6">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">PENGUMUMAN HASIL PENDAFTARAN</h6>
+                </div>
+                <div class="card-body">
+                <?php if (isset($_SESSION['pesan_sukses'])): ?>
+            <p style="color: green;"><?php echo $_SESSION['pesan_sukses']; unset($_SESSION['pesan_sukses']); ?></p>
+        <?php endif; ?>
 
-    <h3>Status Pengumuman:</h3>
-    <?php if ($status === null): ?>
-        <p style="color: red;">Belum ada pengumuman.</p>
-    <?php elseif ($status == 1): ?>
-        <p style="color: green;">✔ Pengumuman telah dikirim: **Semua pendaftar LOLOS**</p>
-    <?php elseif ($status == 2): ?>
-        <p style="color: red;">⏱ Pengumuman telah dikirim: **Pendaftaran sedang di proses**</p>
-    <?php endif; ?>
+            <h3>Status Pengumuman:</h3>
+            <?php if ($status === null): ?>
+                <p style="color: red;">Belum ada pengumuman.</p>
+            <?php elseif ($status == 1): ?>
+                <p style="color: green;">✔ Pengumuman telah dikirim: **Semua pendaftar LOLOS**</p>
+            <?php elseif ($status == 2): ?>
+                <p style="color: red;">⏱ Pengumuman telah dikirim: **Pendaftaran sedang di proses**</p>
+            <?php endif; ?>
 
-    <hr>
+            <hr>
 
-    <h3>Umumkan Hasil Pendaftaran:</h3>
-    <form method="POST">
-        <label for="status">Pilih Hasil Pendaftaran:</label>
-        <select name="status">
-            <option value="">Pilih</option>
-            <option value="1">Lolos Semua</option>
-            <option value="2">Proses pendaftaran</option>
-        </select>
-        <br>
-        <button type="submit" name="submit">Umumkan Hasil pendaftaran</button>
-    </form>
+            <h4>Umumkan Hasil Pendaftaran:</h4>
+            <form method="POST">
+                <label for="status">Pilih Hasil Pendaftaran:</label>
+                <select name="status" class="form-control" id="status">
+                    <option value="">Pilih</option>
+                    <option value="1">Lolos Semua</option>
+                    <option value="2">Proses pendaftaran</option>
+                </select>
+                <br>
+                <button type="submit" name="submit" class="btn btn-primary">
+                    Umumkan Hasil Pendaftaran
+                </button>
+            </form>
 
-    <hr>
+            <hr>
 
-    <h3>Hapus Pengumuman:</h3>
-    <form method="POST">
-        <button type="submit" name="hapus_pengumuman" style="background-color: red; color: white;">
-            Hapus Semua Pengumuman
-        </button>
-    </form>
+            <h4>Hapus Pengumuman:</h4>
+            <form method="POST">
+                <button type="submit" name="hapus_pengumuman" class="btn btn-danger">
+                    Hapus Semua Pengumuman
+                </button>
+            </form>
 
+            <hr>
+            
+            <h4>Kontrol Tombol Registrasi:</h4>
+              <form method="POST">
+                  <label for="status_registrasi">Pilih Status Tombol Registrasi:</label>
+                  <select name="status_registrasi" class="form-control" id="status_registrasi">
+                      <option value="1" <?= $registrasi_status ? "selected" : "" ?>>Tampilkan</option>
+                      <option value="0" <?= !$registrasi_status ? "selected" : "" ?>>Sembunyikan</option>
+                  </select>
+                  <br>
+                  <button type="submit" name="update_registrasi" class="btn btn-primary">
+                      Perbarui Status
+                  </button>
+              </form>
 
-                
+              <?php
+              if (isset($_POST['update_registrasi'])) {
+                  $new_status = $_POST['status_registrasi'] == "1";
+                  saveRegistrasiStatus($new_status);
+                  $_SESSION['pesan_sukses'] = "Status tombol registrasi berhasil diperbarui!";
+                  header("Location: dashboard.php");
+                  exit;
+              }
+              ?>
             </div>
         </div>
     </div>
@@ -173,3 +230,11 @@ if (isset($_POST['hapus_pengumuman'])) {
 <!-- /.container-fluid -->
 
 <?php include('../template/footer.php'); ?>
+<script>
+    document.getElementById("hide-registrasi-dashboard").addEventListener("click", function() {
+        fetch('hide_registrasi.php')
+            .then(response => response.text())
+            .then(data => alert(data))
+            .catch(error => console.error('Error:', error));
+    });
+</script>
