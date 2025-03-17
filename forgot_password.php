@@ -9,9 +9,8 @@ require 'libs/PHPMailer.php';
 require 'libs/SMTP.php';
 require 'libs/Exception.php';
 
-
 require 'vendor/autoload.php'; // Jika menggunakan Composer
-// require 'libs/PHPMailer/PHPMailer.php'; // Jika tanpa Composer, sesuaikan path
+
 date_default_timezone_set("Asia/Jakarta");
 include('config/koneksi.php');
 
@@ -43,7 +42,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Konfigurasi PHPMailer
         $mail = new PHPMailer(true); // true untuk mengaktifkan mode Exception
 
-
         try {
             // Konfigurasi SMTP
             $mail->isSMTP();
@@ -65,15 +63,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Kirim email
             if ($mail->send()) {
-                echo "Email reset password telah dikirim ke $email.";
+                echo "<script>alert('Email reset password telah dikirim ke $email. Silahkan Cek Folder Spam di email'); window.location.href='index.php';</script>";
             } else {
-                echo "Gagal mengirim email.";
+                echo "<script>alert('Gagal mengirim email.'); window.location.href='index.php';</script>";
             }
         } catch (Exception $e) {
-            echo "Gagal mengirim email. Error: {$mail->ErrorInfo}";
+            echo "<script>alert('Gagal mengirim email. Error: {$mail->ErrorInfo}'); window.location.href='index.php';</script>";
         }
     } else {
-        echo "Email tidak ditemukan.";
+        echo "<script>alert('Email tidak ditemukan.'); window.location.href='index.php';</script>";
     }
 }
 ?>

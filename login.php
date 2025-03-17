@@ -21,7 +21,10 @@ $registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tam
 
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MTs Assa'adah Cakung</title>
+      <title>MTs Assa'adah Cakung</title>
+
+<link rel="icon" href="assets/LOGO_MTS.png" type="image/png" sizes="32x32">
+
 
     <link rel="stylesheet" href="index.css">
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -119,7 +122,7 @@ $registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tam
                     <form class="user" action="login_control.php" method="POST">
                         <div class="form-group" style="margin-bottom: 20px;">
                             <input type="text" name="username" class="form-control form-control-user" id="username" 
-                                placeholder="Masukan username" style="text-align: center;">
+                                placeholder="Email" style="text-align: center;">
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 20px; position: relative;">
@@ -137,6 +140,9 @@ $registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tam
                             style="display: block; margin: auto;">
                             Masuk
                         </button>
+                        <div class="text-center mt-2">
+                      <a class="small" href="forgot_password_form.php">Lupa Password!</a>
+                  </div>
                     </form>
                     <hr>
                   <?php if ($registrasi_status): ?>
@@ -144,9 +150,6 @@ $registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tam
                           <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
                       </div>
                   <?php endif; ?>
-                  <div class="text-center">
-                      <a class="small" href="forgot_password_form.php">Lupa Password!</a>
-                  </div>
                 </div>
               </div>
             </div>

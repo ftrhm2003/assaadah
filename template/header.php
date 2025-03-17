@@ -8,9 +8,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="author" content="e-development.tech">
 
-  <title>MTs Assa'adah Cakung</title>
+    <title>MTs Assa'adah Cakung</title>
 
- 
+<link rel="icon" href="assets/LOGO_MTS.png" type="image/png" sizes="32x32">
+
+
 
   <!-- Custom fonts for this template-->
   <link href="../assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">

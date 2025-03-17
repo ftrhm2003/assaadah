@@ -198,9 +198,9 @@
           <ul class="navbar-nav ml-auto">
 
           <!-- Sidebar Toggle Button (Muncul di Mobile) -->
-<button class="btn btn-primary d-lg-none m-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
-    <i class="fas fa-bars"></i> 
-</button>
+            <button class="btn btn-primary d-lg-none m-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMenu">
+                <i class="fas fa-bars"></i> 
+            </button>
 
             <div class="topbar-divider d-none d-sm-block"></div>
 

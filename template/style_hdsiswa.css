@@ -28,6 +28,10 @@
   margin-right: 0;
 }
 
+.navbar .btn {
+  margin-left: 0; /* Aligns the button to the far left */
+}
+
 /* Responsiveness for mobile devices */
 @media (max-width: 768px) {
   body {
@@ -59,4 +63,5 @@
   #content-wrapper {
     margin-left: 250px;
   }
+
 }
