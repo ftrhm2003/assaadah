@@ -100,12 +100,6 @@
                 
                 
             </div>
-
-            
-
-
-
-
             <div class="col-md-4">
                 <?php
                 if(isset($data_pendaftar['foto']) && $data_pendaftar['foto'] != '') {

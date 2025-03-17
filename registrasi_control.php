@@ -18,7 +18,7 @@ if (isset($_POST['btn_registrasi'])) {
 
     // Validasi password
     if ($password != $ulangi_password) {
-        echo "Error: Password is not the same";
+        echo "Error: Password tidak sama";
         echo "<br><br> <button type='button' onclick='history.back();'> Return </button>";
         die;
     }
@@ -46,7 +46,7 @@ if (isset($_POST['btn_registrasi'])) {
             $result_berkas = mysqli_query($koneksi, $sql_berkas);
 
             if ($result_berkas) {
-                $_SESSION['pesan_registrasi'] = "SUCCESSFUL registration, Login using your email and password!";
+                $_SESSION['pesan_registrasi'] = "Pendaftaran BERHASIL, Masuk menggunakan email dan password anda!";
                 header('location:login.php');
             } else {
                 echo "Error insert berkas: " . mysqli_error($koneksi);

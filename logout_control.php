@@ -4,7 +4,7 @@ session_start();
 session_destroy();
 
 session_start();
-$_SESSION['login_error'] = "You have successfully logged out";
+$_SESSION['login_error'] = "Kamu berhasil keluar";
 
 header('location:login.php');
 ?>

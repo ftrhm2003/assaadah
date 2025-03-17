@@ -119,7 +119,7 @@ $registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tam
                     <form class="user" action="login_control.php" method="POST">
                         <div class="form-group" style="margin-bottom: 20px;">
                             <input type="text" name="username" class="form-control form-control-user" id="username" 
-                                placeholder="Enter the username" style="text-align: center;">
+                                placeholder="Masukan username" style="text-align: center;">
                         </div>
                         
                         <div class="form-group" style="margin-bottom: 20px; position: relative;">
@@ -139,11 +139,14 @@ $registrasi_status = json_decode(file_get_contents($registrasi_file), true)["tam
                         </button>
                     </form>
                     <hr>
-                    <?php if ($registrasi_status): ?>
-                        <div class="text-center">
-                            <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
-                        </div>
-                    <?php endif; ?>
+                  <?php if ($registrasi_status): ?>
+                      <div class="text-center">
+                          <a class="small" href="registrasi.php">Pendaftaran Siswa Baru!</a>
+                      </div>
+                  <?php endif; ?>
+                  <div class="text-center">
+                      <a class="small" href="forgot_password_form.php">Lupa Password!</a>
+                  </div>
                 </div>
               </div>
             </div>
